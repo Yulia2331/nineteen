@@ -2,8 +2,10 @@ export default function Marketing() {
   return (
     <div className="container">
         <div className="mt-38">
-            <div className="flex justify-between items-start mb-16">
+            <div className="flex justify-between items-center mb-12">
                 <h2 className="text-5xl font-bold uppercase tracking-[-2]">Модульная система <br /> маркетинга</h2>
+                <a href="">
+                </a>
             </div>
             <div className="grid grid-cols-4 gap-5 text-center">
                 <div className="bg-linear-to-r from-blue-400 to-blue-600 pt-12 rounded-[20px] rounded-tl-[100px] aspect-square flex flex-col justify-between overflow-hidden">
