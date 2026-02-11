@@ -14,7 +14,7 @@ import Growth from "./blocks/Growth";
 import Footer from "./blocks/Footer";
 export default function Home() {
   return (
-    <div className="min-h-screen justify-center w-full ">
+    <div className="min-h-screen justify-center w-full overflow-hidden">
       <div className="h-full w-full bg-[url('/img/bg-1.png')] bg-size-[100%_100%] bg-top bg-no-repeat pb-20 lg:pb-36">
           <Header></Header>
           <Banner></Banner>
