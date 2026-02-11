@@ -87,6 +87,20 @@ h2{
   padding: 0 20px;
   margin: 0 auto;
 }
+.card-front{
+  pointer-events: none;
+}
+.card:hover .card-front{
+  transform: rotateY(-180deg);
+  opacity: 0;
+  border-radius: 100px;
+  z-index: -1;
+}
+.card:hover .card-back{
+   transform: rotateY(0);
+   opacity: 1;
+  z-index: 10;
+}
 .btn{
 
 }
