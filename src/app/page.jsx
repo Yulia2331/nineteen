@@ -11,10 +11,14 @@ import Format from "./blocks/Format";
 import Numbers from "./blocks/Numbers";
 import WhenCome from "./blocks/WhenCome";
 import Growth from "./blocks/Growth";
+// import Test from "./blocks/Test";
 import Footer from "./blocks/Footer";
+
 export default function Home() {
+  
   return (
     <div className="min-h-screen justify-center w-full overflow-hidden">
+      {/* <Test></Test> */}
       <div className="h-full w-full bg-[url('/img/bg-1.png')] bg-size-[100%_100%] bg-top bg-no-repeat pb-20 lg:pb-36">
           <Header></Header>
           <Banner></Banner>

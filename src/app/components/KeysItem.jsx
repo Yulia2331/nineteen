@@ -1,10 +1,10 @@
 export default function KeysItem() {
   return (
-    <div className="relative md:min-h-80 overflow-hidden rounded-4xl cursor-pointer">
+    <a href="#" className="relative md:min-h-80 overflow-hidden rounded-4xl cursor-pointer">
       <div className="absolute w-full overflow-hidden rounded-4xl">
         <img className="w-full rounded-4xl" src="/img/keys.png" alt="" />
       </div>
-        <div className="relative z-30 bg-[url('/img/keys-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full ">
+        <div className="relative z-30 bg-[url('/img/keys-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 hover:opacity-100 transition-all duration-[.8s]">
          <div className="p-5 sm:p-10 lg:p-13 flex flex-col justify-between h-full">
           <div className="">
             <h3 className="text-white text-2xl md:text-[32px] uppercase mb-3">НАЗВАНИЕ</h3>
@@ -18,6 +18,6 @@ export default function KeysItem() {
         </div>
       
 
-    </div>
+    </a>
         );
 }

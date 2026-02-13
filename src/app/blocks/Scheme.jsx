@@ -10,7 +10,8 @@ export default function Scheme() {
                 <span className="text-5xl md:text-6xl lg:text-[64px]">01/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
                     <h4 className="text-lg sm:text-2xl lg:text-[32px] uppercase font-semibold mb-1 tracking-[-1]">Диагностика и стратегия</h4>                 
-                    <p className="text-lg sm:text-2xl tracking-[-0.5]">Понимание текущей ситуации и точек роста</p>
+                    <p className="text-lg sm:text-2xl tracking-[-0.5]">Разбираем текущую ситуацию, ваши цели и точки роста
+</p>
                 </div>
            </div>
              <div className="relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-t-2 border-darck-op py-11 lg:pr-20 text-darck-op hover:text-darck hover:border-darck
@@ -21,7 +22,7 @@ export default function Scheme() {
                 <span className="text-5xl md:text-6xl lg:text-[64px] ">02/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
                     <h4 className="text-2xl lg:text-[32px] uppercase font-semibold mb-1 tracking-[-1] ">Система под ключ</h4>
-                    <p className="text-2xl tracking-[-0.5] ">Архитектура маркетинга с чёткими <br /> метриками и связями</p>
+                    <p className="text-2xl tracking-[-0.5] ">Оффер, сайт, реклама, аналитика. <br /> Все работает как единое целое.</p>
                 </div>
            </div>
              <div className="relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-y-2 border-darck-op py-11 lg:pr-20 text-darck-op hover:text-darck hover:border-t-darck
@@ -32,7 +33,7 @@ export default function Scheme() {
                 <span className="text-5xl md:text-6xl lg:text-[64px] ">03/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
                     <h4 className="text-2xl lg:text-[32px] uppercase font-semibold mb-1 tracking-[-1] ">Рост и масштабирование</h4>
-                    <p className="text-2xl tracking-[-0.5] ">Усиление работающих решений <br /> и устойчивый рост</p>
+                    <p className="text-2xl tracking-[-0.5] ">Усиливаем то, что дает результат. <br /> Улучшаем на основе цифр.</p>
                 </div>
            </div>
         </div>
