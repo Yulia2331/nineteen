@@ -1,4 +1,5 @@
 import KeysItem from "../components/KeysItem";
+import Button from "../components/Button";
 export default function Keys() {
   return (
     <div className="container">
@@ -14,6 +15,10 @@ export default function Keys() {
             <KeysItem></KeysItem>
             <KeysItem></KeysItem>
         </div>
+<div className="flex justify-end mt-10">
+    <Button link="/keys" text="Смотреть все кейсы" class="w-full  lg:w-1/3"></Button>
+</div>
+
     </div>
     </div>
     );

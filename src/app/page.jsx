@@ -1,6 +1,7 @@
 'use client'
 // import Image from "next/image";
 // import React, { useCallback, useEffect, useState, useRef } from 'react'
+import Marquee from 'react-double-marquee';
 import Header from "./blocks/Header";
 import Banner from "./blocks/Banner";
 import Marketing from "./blocks/Marketing";

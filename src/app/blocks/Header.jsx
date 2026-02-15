@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-<header className=" w-full py-5 backdrop-blur-xs bg-white-op-30 mb-10 sm:mb-20">
+<header className=" w-full py-5 backdrop-blur-xs bg-white-op-30 mb-6">
 <div className="container">
     <div className="flex items-center justify-between">
         <a href="#" className="flex items-center">

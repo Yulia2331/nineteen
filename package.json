@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.5.0",
+    "axios": "^1.13.5",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-double-marquee": "^1.1.0",
     "three": "^0.182.0"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
+import Link from 'next/link'
 export default function Button(props) {
-  return (
-  
-    <a 
+  return ( 
+      <Link 
     href={props.link} 
     className={`${props.class} 
     cursor-pointer rounded-[60px]
@@ -13,7 +13,7 @@ export default function Button(props) {
         
        <img src="/img/icon/arr-black.svg" alt="" className="w-5 sm:w-auto"/>
 </div>
-    </a>
-   
+    </Link>  
+
     );
 }
