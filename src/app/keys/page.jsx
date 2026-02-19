@@ -11,7 +11,8 @@ export default function KeysPage() {
 const [posts, setPosts] = useState([])
 const fetchPosts = () => {
     axios
-      .get("http://back.daisywebstudio.ru/wp-json/wp/v2/posts")
+      // .get("http://back.daisywebstudio.ru/wp-json/wp/v2/posts")
+      .get("http://localhost/daisy-doc/wp-json/wp/v2/keys")
       .then((res) => {
         setPosts(res.data);
       });
@@ -26,8 +27,9 @@ console.log(posts)
   return (
     <div className="">
       <Header></Header>
-      <BreadCrumbs></BreadCrumbs>
-      
+      <div className="container">
+        <BreadCrumbs></BreadCrumbs>
+      </div>
     <div className="container"> 
       <div className="py-16">
        <div className="">
@@ -35,7 +37,7 @@ console.log(posts)
        </div>
        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {posts.map((n, i) => ( 
-          <KeysItemCat key={i} link={n.slug} title={n.title.rendered}/>
+          <KeysItemCat key={i} link={n.slug} title={n.title.rendered} img={n.keys_prew} descr={n.keys_descr}/>
         ))
            }
        </div>

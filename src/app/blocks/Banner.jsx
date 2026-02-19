@@ -8,7 +8,7 @@ export default function Banner() {
     <h1 className="text-4xl sm:text-5xl lg:text-[68px] xl:text-[86px] leading-none tracking-[-4] font-bold uppercase">
         <span className="block">Рост бизнеса</span>
         <span className="block">начинается</span>
-        <span>с <span className="font-extrabol bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31%">решения</span></span>
+        <span>с <span className="bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31%">решения</span></span>
         </h1>
         <p className="text-sm sm:text-lg md:text-xl lg:text-2xl pt-4 mb-8">Строим систему привлечения клиентов <br /> через сайт, соцсети, рекламу и аналитику</p>
         <div className="flex-row inline-flex gap-2 flex-wrap">
