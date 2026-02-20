@@ -27,6 +27,7 @@
   --color-text-grad-3: #DB34E5;
   --color-op-grad-1: rgba(29, 193, 248, 0.5);
   --color-op-grad-2: rgba(71, 123, 234, 0.5);
+  --color-black-op-80: rgba(0, 0, 0, .8);
   
    --animate-pulse-sm: pulse-sm 2s ease-in-out infinite;
 @keyframes pulse-sm {

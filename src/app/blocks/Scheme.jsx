@@ -1,7 +1,7 @@
 export default function Scheme() {
   return (
     <div className="container">
-        <div className="mb-20 md:mb-30 lg:mb-38 relative">
+        <div className="mb-20 md:mb-30 lg:mb-32 relative">
            <div className="relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-t-2 py-11 lg:pr-20 border-darck-op text-darck-op hover:text-darck hover:border-darck 
            after:bg-[url('/img/bee.png')] after:bg-contain after:bg-no-repeat after:bg-center after:absolute 
              after:w-full after:h-full  hover:after:opacity-100 after:transition-all after:duration-[.6s] 

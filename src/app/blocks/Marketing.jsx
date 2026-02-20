@@ -6,7 +6,7 @@ export default function Marketing() {
   return (
     <div className="container">
         <div className="mt-20 lg:mt-38">
-            <div className="flex justify-between items-center mb-6 lg:mb-12">
+            <div className="flex justify-between items-center mb-6 ">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-2]">Модульная система <br /> маркетинга</h2>
                 <a href="">
                     <img src="/img/icon/arr-big.svg" alt="" className="w-16 sm:w-24 md:w-auto"/>

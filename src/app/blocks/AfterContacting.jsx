@@ -1,8 +1,9 @@
+import Button from "../components/Button";
 export default function AfterContacting() {
   return (
     <div className="container">
-        <div className="mb-20 md:mb-30 lg:mb-38">
-            <div className="mb-10 lg:mb-16">
+        <div className="mb-20 md:mb-30 lg:mb-26">
+            <div className="mb-10 ">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-2]">Что будет после обращения</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-3 xl:gap-5">
@@ -26,9 +27,15 @@ export default function AfterContacting() {
                     <li className="mb-4 sm:mb-6">приоритет гипотез <br /> на первые этап работы</li>
                     <li>метрики и формат отчётности</li>
                 </ul>
-                <div className="absolute right-0 top-0 opacity-40 lg:opacity-100 lg:relative lg:-mb-24 w-full h-auto flex justify-end "><img  src="/img/freepik.png" alt="" className="lg:w-full h-96 object-contain"/></div>
+                <div className="absolute right-0 top-0 opacity-40 lg:opacity-100 lg:relative lg:-mb-32 w-full h-auto flex justify-end "><img  src="/img/freepik.png" alt="" className="lg:w-full h-96 object-contain"/></div>
                 
             </div>
+            <div className="mt-6 flex flex-col items-end">
+                <div className="flex flex-col items-center w-1/2">
+                    <Button link="#" text="Запланировать стратегическую сессию" class="w-full"></Button>
+                    <span className="text-[16px] mt-2">Если вам нужен рост, который можно считать и масштабировать</span>
+                    </div>
+                </div>
         </div>
     </div>
     );

@@ -3,7 +3,7 @@ import Button from "../components/Button";
 export default function Banner() {
   return (
     <div className="container">    
-<div className="flex-col md:flex-row flex justify-between md:items-center relative mt-10 sm:mt-20">
+<div className="flex-col md:flex-row flex justify-between md:items-center relative mt-10">
     <div className="lg:flex-1 relative z-20">
     <h1 className="text-4xl sm:text-5xl lg:text-[68px] xl:text-[86px] leading-none tracking-[-4] font-bold uppercase">
         <span className="block">Рост бизнеса</span>
@@ -21,7 +21,7 @@ export default function Banner() {
          <img className="w-full" src="/img/banner.png" alt="" />
     </div>
 </div>
-    <div className="mt-10 lg:mt-20">
+    <div className="mt-5">
         <Button link="#" text="Обсудить вашу задачу" class="w-full md:w-auto lg:w-1/2"></Button>
     </div>
     </div>

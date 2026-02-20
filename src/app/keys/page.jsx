@@ -12,7 +12,7 @@ const [posts, setPosts] = useState([])
 const fetchPosts = () => {
     axios
       // .get("http://back.daisywebstudio.ru/wp-json/wp/v2/posts")
-      .get("http://localhost/daisy-doc/wp-json/wp/v2/keys")
+      .get("http://back.19bees.ru/wp-json/wp/v2/keys")
       .then((res) => {
         setPosts(res.data);
       });
@@ -37,7 +37,7 @@ console.log(posts)
        </div>
        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {posts.map((n, i) => ( 
-          <KeysItemCat key={i} link={n.slug} title={n.title.rendered} img={n.keys_prew} descr={n.keys_descr}/>
+          <KeysItemCat key={i} link={`keys/${n.id}`} title={n.title.rendered} img={n.keys_prew} descr={n.keys_shortdescr}/>
         ))
            }
        </div>

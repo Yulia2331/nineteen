@@ -1,7 +1,7 @@
 export default function WhenCome() {
   return (
     <div className="container">
-        <div className="mb-20 md:mb-30 lg:mb-38">
+        <div className="mb-20 md:mb-30 lg:mb-32">
             <div className="flex justify-center mb-10 lg:mb-16">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-2]">Когда к нам приходят</h2>
             </div>
