@@ -9,8 +9,8 @@ export default function Header() {
             <img src="/img/logo.svg" alt="" className="w-12 lg:w-20"/>
            
             <div className="flex flex-col items-start leading-none font-medium tracking-[-1] ml-2">
-                <span className="text-[15px] lg:text-xl">Nineteen bees</span>
-                <span className="text-[9px] lg:text-[12px]">Развитие бизнеса в сети</span>
+                <span className="text-[15px] lg:text-2xl">Nineteen bees</span>
+                <span className="text-[9px] lg:text-[14px]">Развитие бизнеса в сети</span>
             </div>
         </a>
         <ul className="hidden lg:flex font-bold text-[12px] lg:text-sm xl:text-[16px] gap-4 xl:gap-7 uppercase">

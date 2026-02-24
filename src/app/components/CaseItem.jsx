@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import axios from "axios";
-export default  function KeysItem(props) {
+export default  function CaseItem(props) {
       const [tags, setTags] = useState([])
 const fetchTags = () => {
     axios
-      .get("http://back.19bees.ru/wp-json/wp/v2/keys_tag")
+      .get("http://back.19bees.ru/wp-json/wp/v2/cases_tag")
       .then((res) => {
         setTags(res.data);
       });
@@ -33,15 +33,15 @@ console.log(tags)
 //   const tags = [];
   // const tagsId = props.tag;
   // console.log(tagsId);
-  // const tag = await fetch(`http://back.19bees.ru/wp-json/wp/v2/keys_tag/15`);
+  // const tag = await fetch(`http://back.19bees.ru/wp-json/wp/v2/cases_tag/15`);
   // console.log(tag)
 //   tagsId.forEach((i) => {
-//   const tag = fetch(`http://back.19bees.ru/wp-json/wp/v2/keys_tag/15`);
+//   const tag = fetch(`http://back.19bees.ru/wp-json/wp/v2/cases_tag/15`);
 
 //   tags.push(tag);
 // });
 //  tagsId.foreach((n) => ( 
-//                tags.push(fetch(`http://back.19bees.ru/wp-json/wp/v2/keys/${n}`))  ))
+//                tags.push(fetch(`http://back.19bees.ru/wp-json/wp/v2/cases/${n}`))  ))
 //                console.log(tags);
                        
   return (
@@ -49,7 +49,7 @@ console.log(tags)
       <div className="absolute w-full overflow-hidden rounded-4xl">
         <img className="w-full rounded-4xl" src={props.img} alt="" />
       </div>
-        <div className="relative z-30 bg-[url('/img/keys-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 hover:opacity-100 transition-all duration-[.8s]">
+        <div className="relative z-30 bg-[url('/img/cases-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 hover:opacity-100 transition-all duration-[.8s]">
          <div className="p-5 sm:p-10 lg:p-13 flex flex-col justify-between h-full">
           <div className="">
             <h3 className="text-white text-2xl md:text-[32px] uppercase mb-3">{props.title}</h3>

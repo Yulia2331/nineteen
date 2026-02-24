@@ -1,40 +1,38 @@
+'use client'
 
-
+import React, { useCallback, useEffect, useState, Suspense } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation';
 import Header from "../../blocks/Header";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SmCard from "../../components/SmCard";
 import ButtonBlack from "../../components/ButtonBlack";
-export async function generateStaticParams() {
-  // Fetch data from your CMS, database, or API
-  // const posts = [{id: 1}]
-const res = await fetch("http://back.19bees.ru/wp-json/wp/v2/keys", {
-    cache: "no-store",
-  });
-  let posts = await res.json()
-  console.log(res)
-  // Return an array of objects, where each object
-  // has the parameter name (e.g., 'slug') as a key
-// return(
-//   posts.map((i) => (
-      
-//   ))
-// )
+import axios from "axios";
 
-  return posts.map((post) => ({
-    slug: post.id
-  }));
-}
+// export default async function getPost() {
+//   const res = await fetch(`https://back.19bees.ru/wp-json/wp/v2/cases/7`);
+//   let post = await res.json()
+//   return(post)
+// }
+function CasePage() {
+ const searchParams = useSearchParams()
+  const p = searchParams.get("id")
+  const [post, setPost] = useState([])
+  const fetchPost = () => {
+    axios
+      .get(`https://back.19bees.ru/wp-json/wp/v2/cases/${p}`)
+      .then((res) => {
+        setPost(res.data);
+      });
+  }
 
-// Your Page component receives the params
-export default async function Page({ params }) {
-  // params.slug will be available here
-  const {id} = await params;
-   const res = await fetch(`http://back.19bees.ru/wp-json/wp/v2/keys/${id}`);
-  let post = await res.json()
-  // console.log(post);
-  const wh = post.keys_cards;
-  return (
-    <div className="relative">
+  useEffect(() => {
+    fetchPost()
+  }, 
+[])
+if (!post || post.length === 0) return <div className="h-full w-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% absolute top-0"></div>
+  const wh = post.cases_cards;
+return(
+  <div className="relative">
       <div className="h-full w-full bg-black-op-80 absolute top-0 z-50 hidden">
 
       </div>
@@ -49,12 +47,12 @@ export default async function Page({ params }) {
     <div className="container ">
       <div className="grid grid-cols-2 gap-5 mt-20">
       <div className="">
-        <p className="text-2xl">{post.keys_descr}</p>
-        <div className="mt-12 bg-[url('/img/keys-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
+        <p className="text-2xl">{post.cases_descr}</p>
+        <div className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[32px]">Что сделано:</span>
           <div className="mt-12 grid grid-cols-2 gap-5">
             {wh.map((n, i) => ( 
-              <SmCard key={i} text={n.keys_card_text}></SmCard>
+              <SmCard key={i} text={n.cases_card_text}></SmCard>
                     ))
                        }
           </div>
@@ -62,11 +60,22 @@ export default async function Page({ params }) {
         </div>
       </div>
       <div className="relative">
-        <img className="w-full" src={post.keys_mainimg} alt="" />
+        <img className="w-full" src={post.cases_mainimg} alt="" />
         <img className="absolute top-8 right-8 cursor-pointer" src="/img/icon/pop-trig.svg" alt="" />
       </div>
       </div>
     </div>
-    </div>
+   
+    </div>        
+)
+}
+
+export default  function Page() {
+ 
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CasePage />
+    </Suspense>
+    
   )
 }

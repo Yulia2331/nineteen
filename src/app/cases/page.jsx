@@ -3,16 +3,15 @@ import React, { useCallback, useEffect, useState, useRef } from 'react'
 import Marquee from 'react-double-marquee';
 import Header from "../blocks/Header";
 import BreadCrumbs from "../components/BreadCrumbs";
-import KeysItemCat from "../components/KeysItemCat";
+import CaseItemCat from "../components/CaseItemCat";
 import Button from "../components/Button";
 import axios from "axios";
-export default function KeysPage() {
 
+export default function СasesPage() {
 const [posts, setPosts] = useState([])
 const fetchPosts = () => {
     axios
-      // .get("http://back.daisywebstudio.ru/wp-json/wp/v2/posts")
-      .get("http://back.19bees.ru/wp-json/wp/v2/keys")
+      .get("https://back.19bees.ru/wp-json/wp/v2/cases")
       .then((res) => {
         setPosts(res.data);
       });
@@ -22,8 +21,8 @@ const fetchPosts = () => {
     fetchPosts()
   }, 
 [])
-console.log(posts)
-
+// console.log(posts)
+if (!posts || posts.length === 0) return <p></p>
   return (
     <div className="">
       <Header></Header>
@@ -37,10 +36,14 @@ console.log(posts)
        </div>
        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {posts.map((n, i) => ( 
-          <KeysItemCat key={i} link={`keys/${n.id}`} title={n.title.rendered} img={n.keys_prew} descr={n.keys_shortdescr}/>
+          
+          <CaseItemCat key={i} link={`cases/case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} onClick={() => setOpId(n.id)}>
+           
+          </CaseItemCat>
         ))
            }
        </div>
+       
 <div className="flex justify-center mt-10">
     <Button link="#" text="Показать больше" class="w-full  lg:w-1/3"></Button>
 </div>
@@ -49,4 +52,3 @@ console.log(posts)
     </div>
     );
 }
-

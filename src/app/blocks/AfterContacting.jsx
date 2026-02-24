@@ -31,9 +31,9 @@ export default function AfterContacting() {
                 
             </div>
             <div className="mt-6 flex flex-col items-end">
-                <div className="flex flex-col items-center w-1/2">
+                <div className="flex flex-col items-center w-full lg:w-1/2">
                     <Button link="#" text="Запланировать стратегическую сессию" class="w-full"></Button>
-                    <span className="text-[16px] mt-2">Если вам нужен рост, который можно считать и масштабировать</span>
+                    <span className="text-[16px] mt-2 text-center">Если вам нужен рост, который можно считать и масштабировать</span>
                     </div>
                 </div>
         </div>

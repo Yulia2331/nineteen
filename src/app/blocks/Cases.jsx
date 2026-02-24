@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import axios from "axios";
-import KeysItem from "../components/KeysItem";
+import CaseItem from "../components/CaseItem";
 import Button from "../components/Button";
-export default function Keys() {
+export default function Cases() {
 
     const [posts, setPosts] = useState([])
     // const [tags, setTags] = useState([])
 const fetchPosts = () => {
     axios
-      .get("http://back.19bees.ru/wp-json/wp/v2/keys/?per_page=4")
+      .get("https://back.19bees.ru/wp-json/wp/v2/cases/?per_page=4")
       .then((res) => {
         setPosts(res.data);
       });
@@ -31,13 +31,13 @@ console.log(posts)
         </div>
         <div className="grid lg:grid-cols-2 gap-5">
              {posts.map((n, i) => ( 
-                       <KeysItem key={i} link={`keys/${n.id}`} title={n.title.rendered} img={n.keys_prew} descr={n.keys_shortdescr} tag={n.keys_tag}/>
+                       <CaseItem key={i} link={`cases/case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
                     ))
                        }
 
         </div>
 <div className="flex justify-end mt-10">
-    <Button link="/keys" text="Смотреть все кейсы" class="w-full  lg:w-1/3"></Button>
+    <Button link="/cases" text="Смотреть все кейсы" class="w-full  lg:w-1/3"></Button>
 </div>
 
     </div>

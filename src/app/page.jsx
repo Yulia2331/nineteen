@@ -5,7 +5,7 @@ import Marquee from 'react-double-marquee';
 import Header from "./blocks/Header";
 import Banner from "./blocks/Banner";
 import Marketing from "./blocks/Marketing";
-import Keys from "./blocks/Keys";
+import Cases from "./blocks/Cases";
 import Scheme from "./blocks/Scheme";
 import AfterContacting from "./blocks/AfterContacting";
 import Format from "./blocks/Format";
@@ -25,7 +25,7 @@ export default function Home() {
           <Banner></Banner>
           <Marketing></Marketing>
       </div>
-      <Keys></Keys>
+      <Cases></Cases>
       <div className="h-full w-full bg-[url('/img/bg-2.png')] bg-size-[100%_100%] bg-top bg-no-repeat pb-20 lg:pb-36">
         <Scheme></Scheme>
         <AfterContacting></AfterContacting>
