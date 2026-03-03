@@ -5,14 +5,11 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Header from "../../blocks/Header";
 import BreadCrumbs from "../../components/BreadCrumbs";
 import SmCard from "../../components/SmCard";
-import ButtonBlack from "../../components/ButtonBlack";
+import ButtonBlackPop from "../../components/ButtonBlackPop";
+import Footer from "../../blocks/Footer";
 import axios from "axios";
 
-// export default async function getPost() {
-//   const res = await fetch(`https://back.19bees.ru/wp-json/wp/v2/cases/7`);
-//   let post = await res.json()
-//   return(post)
-// }
+
 function CasePage() {
  const searchParams = useSearchParams()
   const p = searchParams.get("id")
@@ -34,38 +31,47 @@ if (!post || post.length === 0) return <div className="h-full w-full bg-linear-t
 return(
   <div className="relative">
       <div className="h-full w-full bg-black-op-80 absolute top-0 z-50 hidden">
-
       </div>
       <Header></Header>
-      <div className="bg-[url('/img/sot.png')] bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto">
+      <div className="mb-20">
+      <div className="bg-[url('/img/sot.png')] bg-cover sm:bg-size-[75%_100%] lg:bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto pb-16">
       <div className="container">
-        <BreadCrumbs></BreadCrumbs>
-        <h1 className="text-4xl sm:text-5xl lg:text-[68px] xl:text-[86px] leading-none tracking-[-4] font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-40">{post.title.rendered}
+
+      <div className="flex items-center gap-4">
+        <a href="/" className="text-[16px] text-darck-op-30 hover:text-darck">Главная</a>
+        <span className="h-1 w-1 bg-darck-op-30 rounded-full"></span>
+        <a href="/cases" className="text-[16px] text-darck-op-30 hover:text-darck">Кйсы</a>
+        <span className="h-1 w-1 bg-darck rounded-full"></span>
+        <span className="text-[16px] text-darck font-bold">{post.title.rendered}</span>
+    </div>
+
+        <h1 className="text-4xl sm:text-6xl md:text-[68px] xl:text-[86px] leading-none tracking-[-4] font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-28">{post.title.rendered}
         </h1>
       </div>
     </div>
     <div className="container ">
-      <div className="grid grid-cols-2 gap-5 mt-20">
+      <div className="grid lg:grid-cols-2 gap-5">
       <div className="">
-        <p className="text-2xl">{post.cases_descr}</p>
+        <p className="text-xl md:text-2xl">{post.cases_descr}</p>
         <div className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[32px]">Что сделано:</span>
-          <div className="mt-12 grid grid-cols-2 gap-5">
+          <div className="mt-12 grid sm:grid-cols-2 gap-5">
             {wh.map((n, i) => ( 
               <SmCard key={i} text={n.cases_card_text}></SmCard>
                     ))
                        }
           </div>
-          <ButtonBlack link="#" text="Получить консультацию" class="mt-38"/>
+          <ButtonBlackPop text="Получить консультацию" class="mt-24 lg:mt-38"/>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-20 lg:mt-0">
         <img className="w-full" src={post.cases_mainimg} alt="" />
         <img className="absolute top-8 right-8 cursor-pointer" src="/img/icon/pop-trig.svg" alt="" />
       </div>
       </div>
     </div>
-   
+    </div>
+   <Footer></Footer>
     </div>        
 )
 }

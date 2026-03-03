@@ -20,13 +20,35 @@ const fetchPosts = () => {
 [])
 
 console.log(posts)
+     const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Остановить наблюдение
+        }
+      },
+      { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
   return (
+    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
     <div className="container">
         <div className="mb-32">
         <div className="mb-12">
             <div className="flex justify-between items-center  ">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-2]">наши кейсы</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2]">наши кейсы</h2>
             </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-5">
@@ -40,6 +62,7 @@ console.log(posts)
     <Button link="/cases" text="Смотреть все кейсы" class="w-full  lg:w-1/3"></Button>
 </div>
 
+    </div>
     </div>
     </div>
     );

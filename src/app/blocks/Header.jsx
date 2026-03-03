@@ -1,32 +1,33 @@
 import Image from "next/image";
+import { Link, Element } from 'react-scroll'
 
 export default function Header() {
   return (
-<header className=" w-full py-3 backdrop-blur-xs bg-white-op-30 mb-6">
+    <div className="">
+<header className=" w-full py-2 backdrop-blur-xs bg-white-op-30 mb-6 fixed top-0 z-30">
 <div className="container">
     <div className="flex items-center justify-between">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
             <img src="/img/logo.svg" alt="" className="w-12 lg:w-20"/>
            
-            <div className="flex flex-col items-start leading-none font-medium tracking-[-1] ml-2">
-                <span className="text-[15px] lg:text-2xl">Nineteen bees</span>
-                <span className="text-[9px] lg:text-[14px]">Развитие бизнеса в сети</span>
+            <div className="flex flex-col items-start leading-none font-medium tracking-[-.8] ml-2">
+                <span className="text-[18px] sm:text-xl lg:text-2xl">Nineteen bees</span>
+                <span className="text-[11px] sm:text-[12px] lg:text-[14px]">Развитие бизнеса в сети</span>
             </div>
         </a>
         <ul className="hidden lg:flex font-bold text-[12px] lg:text-sm xl:text-[16px] gap-4 xl:gap-7 uppercase">
-            <li className=""><a href="">Решения</a></li>
-            <li className=""><a href="">Кейсы</a></li>
-            <li className=""><a href="">Отрасли</a></li>
-            <li className=""><a href="">О компании</a></li>
-            <li className=""><a href="">Связаться</a></li>
+            <li className="cursor-pointer"><Link to="marketing" smooth={true} duration={1500}>Услуги</Link></li>
+            <li className="cursor-pointer"><Link to="cases" smooth={true} duration={1500}>Кейсы</Link></li>
+            <li className="cursor-pointer"><Link to="about" smooth={true} duration={1500} href="">О компании</Link></li>
+            <li className="cursor-pointer"><Link to="growth" smooth={true} duration={1500} href="">Связаться</Link></li>
         </ul>
         <div className="flex items-center gap-5">
             <div className="flex md:gap-1">
-                <a href=""><img src="/img/icon/phone.svg" alt="" /></a>
-                <a href=""><img src="/img/icon/tg.svg" alt="" /></a>
-                <a href=""><img src="/img/icon/wh.svg" alt="" /></a>
+                <a href="tel:89174351919" target="_blank"><img src="/img/icon/phone.svg" alt="" /></a>
+                <a href="https://t.me/Allakoala9" target="_blank"><img src="/img/icon/tg.svg" alt="" /></a>
+                <a href="https://wa.me/37259002425" target="_blank"><img src="/img/icon/wh.svg" alt="" /></a>
             </div>
-            <div className="hidden md:flex gap-2">
+            <div className="hidden  gap-2">
                 <a href="" className="border-2 border-darck rounded-full flex items-center justify-center p-2"><img src="/img/icon/search.svg" alt="" /></a>
                 <a href="" className="border-2 border-darck rounded-full flex items-center justify-center p-2"><img src="/img/icon/prof.svg" alt="" /></a>
             </div>
@@ -34,5 +35,6 @@ export default function Header() {
     </div>
 </div>
 </header>
+<div className="pt-16 lg:pt-28"></div></div>
     );
 }

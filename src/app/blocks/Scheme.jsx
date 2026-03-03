@@ -1,7 +1,33 @@
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Scheme() {
+   const [isVisible, setIsVisible] = useState(false);
+            const ref = useRef(null);
+          
+            useEffect(() => {
+              const observer = new IntersectionObserver(
+                ([entry]) => {
+                  if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target); // Остановить наблюдение
+                  }
+                },
+                { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+              );
+          
+              if (ref.current) {
+                observer.observe(ref.current);
+              }
+          
+              return () => {
+                if (ref.current) observer.unobserve(ref.current);
+              };
+            }, []);
   return (
+    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
     <div className="container">
-        <div className="mb-20 md:mb-30 lg:mb-32 relative">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] mb-20">Наш подход</h2>
+                  
+        <div className="mb-14 md:mb-20 lg:mb-24 relative">
            <div className="relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-t-2 py-11 lg:pr-20 border-darck-op text-darck-op hover:text-darck hover:border-darck 
            after:bg-[url('/img/bee.png')] after:bg-contain after:bg-no-repeat after:bg-center after:absolute 
              after:w-full after:h-full  hover:after:opacity-100 after:transition-all after:duration-[.6s] 
@@ -17,7 +43,7 @@ export default function Scheme() {
              <div className="relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-t-2 border-darck-op py-11 lg:pr-20 text-darck-op hover:text-darck hover:border-darck
               after:bg-[url('/img/bee.png')] after:bg-contain after:bg-no-repeat after:bg-center after:absolute 
              after:w-full after:h-full  hover:after:opacity-100 after:transition-all after:duration-[.6s] 
-             after:-top-20 after:left-32 lg::after:scale-125 xl:after:scale-145 md:after:-left-56 md:after:-top-2 lg:after:-left-72 after:opacity-0 after:translate-x-36 hover:after:translate-0
+             after:-top-20 after:left-32 lg:after:scale-125 xl:after:scale-145 md:after:-left-56 md:after:-top-2 lg:after:-left-72 after:opacity-0 after:translate-x-36 hover:after:translate-0
              ">
                 <span className="text-5xl md:text-6xl lg:text-[64px] ">02/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
@@ -37,6 +63,7 @@ export default function Scheme() {
                 </div>
            </div>
         </div>
+    </div>
     </div>
     );
 }

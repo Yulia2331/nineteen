@@ -14,9 +14,11 @@ export default function MarketingItem(props) {
                         <img src={props.src} alt=""  className="w-62 h-52 object-contain"/>
                     </div>
                 </div>
-                <div className={`card-back h-full bg-white px-5 pt-12 rounded-[20px] shadow-[0_9px_33px_rgba(36,36,36,0.2)] sm:aspect-square ${props.class} absolute top-0 z-20  transition-all duration-[.8s] rotate-y-180 opacity-0`}>
-                    <h3 className="text-2xl lg:text-3xl mb-3 uppercase font-semibold">{props.title}</h3>
-                    <p className="text-xl lg:text-2xl">{props.text}</p>
+                <div className={`card-back h-full w-full sm:aspect-square absolute left-0  top-0 z-20  transition-all duration-[.8s] rotate-y-180 opacity-0 p-3 `}>
+                    <div className={`h-full bg-white px-5 pt-12 rounded-[20px] shadow-[0_9px_33px_rgba(36,36,36,0.2)] ${props.class}`}>
+                        <h3 className="text-2xl lg:text-3xl mb-3 uppercase font-semibold">{props.title}</h3>
+                        <p className="text-xl lg:text-2xl">{props.text}</p>
+                    </div>
                 </div>
         </div>
         );

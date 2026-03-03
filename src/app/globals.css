@@ -28,11 +28,40 @@
   --color-op-grad-1: rgba(29, 193, 248, 0.5);
   --color-op-grad-2: rgba(71, 123, 234, 0.5);
   --color-black-op-80: rgba(0, 0, 0, .8);
-  
+  --color-green: #00FF55;
+  --color-sh: rgba(219, 52, 229, .5);
+  --color-greys: #D3D3D3;
+
    --animate-pulse-sm: pulse-sm 2s ease-in-out infinite;
 @keyframes pulse-sm {
   50% {
     opacity: 0.8;
+  }
+}
+
+
+--animate-bounce-sm: bounce-sm 5s  infinite;
+
+@keyframes bounce-sm {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 2.5, 1);
+  }
+}
+--animate-bounce-hand: bounce-hand 5s  infinite;
+
+@keyframes bounce-hand {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 }
@@ -84,7 +113,7 @@ h2{
   line-height: 120%;
 }
 .container{
-  max-width: 1280px;
+  max-width: 1220px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -102,12 +131,79 @@ h2{
    opacity: 1;
   z-index: 10;
 }
-.btn{
-
+.marquee {
+  overflow: hidden;
+  width: 100%;
 }
-.p-btn{
 
+.marquee__track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 10s linear infinite;
 }
-.black-btn{
 
+.marquee__content {
+  display: flex;
+}
+
+.marquee__content span {
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* .box {
+  animation: 2s show ease;
+}
+
+@keyframes show {
+  from { transform: translateY(200px); }
+  to { transform: translateY(0); }
+} */
+
+.fade-block {
+  opacity: 0;
+  transform: translateY(80px) scale(.85); /* Эффект смещения */
+  transition: opacity 1.2s ease-out, transform .6s ease-out;
+}
+
+.fade-block.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1); /* Возврат на место */
+}
+
+
+.gradient-button {
+  position: relative;
+  padding: 16px;
+  background: transparent; /* Прозрачный фон */
+  border-radius: 60px; /* Закругление */
+  z-index: 1;
+  text-decoration: none;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.gradient-button::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 60px; /* Закругление */
+  border: 3px solid transparent; /* Толщина обводки */
+  background: linear-gradient(90deg, #1DC1F8 6.17%, #477BEA 86.46%); /* Градиент */
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+   cursor: pointer;
+}
+
+
+.gradient-button:hover  {
+
+ background: linear-gradient(45deg, rgba(134, 200, 255, 0.2) 36.17%, rgba(215, 29, 248, 0.4) 86.46%);
 }
