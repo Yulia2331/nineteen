@@ -5,7 +5,7 @@ export default function Banner() {
     <div className="container">    
 <div className="flex-col md:flex-row flex justify-between md:items-center relative mt-10">
     <div className="lg:flex-1 relative z-20">
-    <h1 className="text-4xl sm:text-5xl lg:text-[68px] xl:text-[86px] leading-none tracking-[-1.6] md:tracking-[-4] font-bold uppercase">
+    <h1 className="text-4xl xs:text-5xl sm:text-[56px] lg:text-[68px] xl:text-[86px] leading-none tracking-tight font-bold uppercase">
         <span className="block">Рост бизнеса</span>
         <span className="block">начинается</span>
         <span>с <span className="bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31%">решения</span></span>
@@ -17,7 +17,7 @@ export default function Banner() {
             <span className="text-sm md:text-[16px] lg:text-2xl py-2 px-3 lg:px-5 border-2 border-darck-op rounded-4xl">B2B и услуги</span>
         </div>
     </div>
-    <div className="max-w-4/12 md:max-w-5/12 xl:max-w-5/12 lg:flex-1 flex flex-col items-center justify-end absolute right-0 md:relative z-10">
+    <div className=" max-w-4/12 md:max-w-5/12 xl:max-w-5/12 lg:flex-1 scale-120 sm:scale-100 translate-x-1/2 translate-y-1/2 sm:translate-0 flex flex-col items-center justify-end absolute right-0 md:relative z-10">
          <img className="w-full" src="/img/banner.png" alt="" />
     </div>
 </div>

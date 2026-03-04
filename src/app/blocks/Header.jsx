@@ -21,7 +21,8 @@ export default function Header() {
             <li className="cursor-pointer"><Link to="about" smooth={true} duration={1500} href="">О компании</Link></li>
             <li className="cursor-pointer"><Link to="growth" smooth={true} duration={1500} href="">Связаться</Link></li>
         </ul>
-        <div className="flex items-center gap-5">
+        <a href="/promo" className="text-sm">Быстрый старт</a>
+        <div className="sm:flex items-center gap-5 hidden">
             <div className="flex md:gap-1">
                 <a href="tel:89174351919" target="_blank"><img src="/img/icon/phone.svg" alt="" /></a>
                 <a href="https://t.me/Allakoala9" target="_blank"><img src="/img/icon/tg.svg" alt="" /></a>

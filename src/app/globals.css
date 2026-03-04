@@ -11,6 +11,7 @@
 }
 @theme{
   /* Вместо tailwind.config.js теперь пишем здесь */
+  --breakpoint-xs: 26rem;
   --color-brand: #3b82f6;
   /* --font-sans: 'Inter', sans-serif; */
   --color-orange: #E67950;
@@ -154,6 +155,12 @@ h2{
 @keyframes scroll-left {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
+}
+
+.marquee__track_promo {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 30s linear infinite;
 }
 
 /* .box {
