@@ -21,7 +21,7 @@ const fetchPosts = () => {
     fetchPosts()
   }, 
 [])
-// console.log(posts)
+console.log(posts)
 if (!posts || posts.length === 0) return <p></p>
   return (
     <div className="">

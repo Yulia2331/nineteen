@@ -3,6 +3,13 @@
 import Header from "../blocks/Header";
 import Footer from "../blocks/Footer";
 import Banner from "../blocks/promo/Banner";
+import WhoIt from "../blocks/promo/WhoIt";
+import Doing from "../blocks/promo/Doing";
+import Rate from "../blocks/promo/Rate";
+import Promo from "../blocks/promo/Promo";
+import WillGet from "../blocks/promo/WillGet";
+import Blot from "../blocks/promo/Blot";
+import Cost from "../blocks/promo/Cost";
 // import SmCard from "../components/SmCard";
 export default function PromoPage() {
 
@@ -12,68 +19,12 @@ export default function PromoPage() {
       <div className="">
       <Banner></Banner>
       <div className="relative overflow-hidden ">
-    <section className="my-20">
-      <div className="container">
-        <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Кому подходит</h2>
-        </div>
-        <div className="md:text-lg lg:text-2xl grid grid-cols-5">
-          <span className="border-l border-l-greys py-3 px-2 lg:p-4">Услуги, эксперты, товары, личный бренд</span>
-          <span className="border-l border-l-greys py-3 px-2 lg:p-4">Деньги или заявки закончились</span>
-          <span className="border-l border-l-greys py-3 px-2 lg:p-4">Старый сайт не продаёт или его нет</span>
-          <span className="border-l border-l-greys py-3 px-2 lg:p-4">Нужно проверить спрос перед масштаби-рованием</span>
-          <span className="border-l border-l-greys py-3 px-2 lg:p-4">Нет времени и ресурса на долгий маркетинг</span>
-        </div>
-      </div>
-    </section>
+
+      <WhoIt></WhoIt>
+
     <img src="/img/promo/bee.png" alt="" className=" absolute right-0 md:top-[12%] lg:top-[15.5%] translate-x-1/2 -z-10 scale-85 xl:scale-90"/>
- <section className="my-20">
-      <div className="container">
-        <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Что мы делаем</h2>
-        </div>
-        <div className="text-2xl grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-         <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-          <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-          <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>         
 
-
-        </div>
-      </div>
-    </section>
+      <Doing></Doing>
 
      <section className="my-20">
       <div className="container">
@@ -104,42 +55,7 @@ export default function PromoPage() {
 
     <div className="">
 
-        <section className="my-20">
-      <div className="container">
-        <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Состав тарифа</h2>
-        </div>
-        <div className="text-2xl grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-             <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-         <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-          <div className="">
-            <span className="text-5xl md:text-6xl lg:text-[64px] text-darck-op border-b-2 border-b-greys py-2 mb-5 block">01</span>
-            <h3 className="text-3xl mb-7">Упаковываем идею</h3>
-            <ul className="list-disc flex flex-col gap-2 pl-5">
-              <li>формулируем <br /> ценность и <br /> продающий оффер</li>
-              <li>определяем <br /> ключевые сегменты и преимущества</li>
-              <li>собираем путь <br /> клиента от первого касания к заявке</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+     <Rate></Rate>
 
 
      <section className="py-10 xs:py-16 sm:py-26 pb-40 sm:h-[300px] md:h-auto lg:h-[490px] xl:h-[520px] w-full bg-linear-to-r from-blue-400 to-blue-600 relative overflow-hidden flex items-center">
@@ -158,81 +74,13 @@ export default function PromoPage() {
 
     <div className="mt-5">
 
-    <section className="h-full w-full bg-[url('/img/promo/block-bg.png')] bg-cover bg-top bg-no-repeat pb-40">
-      
-  <div className="py-14 md:py-20 ">
-  <div className="-ml-[200%] lg:-ml-[100%] translate-x-[55%] lg:translate-x-[50%] -rotate-8 sm:-rotate-5 border-b-2 border-b-[#20ADEC] border-t-2 border-t-[#20ADEC] p-1 sm:p-2 bg-white">
-      <div className="marquee__track_promo">
-    <div className="marquee__content flex items-center ">     
-         <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему</span>
-    </div>
-
-    </div>
-  </div>
-<div className=" rotate-8 sm:rotate-5 border-b-2 border-b-[#20ADEC] border-t-2 border-t-[#20ADEC] p-1 sm:p-2 bg-white">
-      <div className="marquee__track_promo">
-    <div className="marquee__content flex items-center">     
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему сайт в подарок</span>
-        <span className="h-2 w-2 sm:h-[10px] sm:w-[10px] rounded-full bg-darck"></span>
-        <span className="text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% tracking-tight">Почему</span>
-    </div>
-
-    </div>
-</div>
-
-  </div>
-
-      <div className="container">
-        <div className="grid xs:grid-cols-3 gap-3 xs:gap-2 md:gap-3 lg:gap-5 md:mt-3">
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Посадочная страница — центр воронки продаж</p>
-          </div>
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl xs:translate-y-8 md:translate-y-12">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Реклама приводит трафик. Сайт решает, станет ли он заявками</p>
-          </div>
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-4 sm:leading-5 md:leading-7 lg:leading-9">Собираем сайт под вашу воронку и сразу подключаем аналитику</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="">
-      <div className="container">
-        <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Что вы получаете на выходе</h2>
-        </div>
-         <div className="mb-14 md:mb-20 lg:mb-24 relative">
-           <div className="relative flex  flex-row gap-3 justify-between items-center border-t-2 py-4 sm:py-8 lg:pr-5 border-darck-op">
-                <span className="text-5xl xs:text-6xl lg:text-[64px] text-darck-op">01</span>
-                <p className="w-4/6 lg:w-1/2 text-lg xs:text-xl sm:text-[32px] tracking-[-0.5] leading-6 sm:leading-10">Проработанную стратегию старта</p>
-           </div>
-          <div className="relative flex  flex-row gap-3 justify-between items-center border-t-2 py-4 sm:py-8 lg:pr-5 border-darck-op">
-                <span className="text-5xl xs:text-6xl lg:text-[64px] text-darck-op">02</span>
-                <p className="w-4/6 lg:w-1/2 text-lg xs:text-xl sm:text-[32px] tracking-[-0.5] leading-6 sm:leading-10">Сайт, заточенный под ваш продукт и рекламу</p>
-           </div>
-        </div>
-      </div>
-    </section>
+   <Promo></Promo>
+    <WillGet></WillGet>
+    <Blot></Blot>
 
     </div>
 
+    <Cost></Cost>
 
      <Footer></Footer>
     </div>

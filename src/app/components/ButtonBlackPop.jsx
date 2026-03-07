@@ -11,7 +11,7 @@ export default function ButtonBlackPop(props) {
     hover:from-text-grad-2 hover:from-41.24%
     hover:to-text-grad-3 hover:to-84.31% 
     hover:shadow-xl hover:shadow-sh  transition-all duration-[.6s]
-   w-full
+   w-full px-8
     `}>
  
         <span>{props.text}</span>

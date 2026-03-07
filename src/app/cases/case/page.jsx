@@ -28,31 +28,42 @@ function CasePage() {
 [])
 if (!post || post.length === 0) return <div className="h-full w-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% absolute top-0"></div>
   const wh = post.cases_cards;
+  const image = post.cases_popup;
 return(
   <div className="relative">
       <div className="h-full w-full bg-black-op-80 absolute top-0 z-50 hidden">
+        <div className="container">
+          <div className="flex justify-center">
+          <div className="">
+              {image.map((n, i) => ( 
+                <img src={n.item_img} key={i} alt="" className=""/>
+                    ))
+                  }
+            </div>
+              </div>
+         </div>
       </div>
       <Header></Header>
       <div className="mb-20">
-      <div className="bg-[url('/img/sot.png')] bg-cover sm:bg-size-[75%_100%] lg:bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto pb-16">
+      <div className="bg-[url('/img/sot.png')] bg-cover sm:bg-size-[75%_100%] lg:bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto pb-14">
       <div className="container">
 
       <div className="flex items-center gap-4">
         <a href="/" className="text-[16px] text-darck-op-30 hover:text-darck">Главная</a>
         <span className="h-1 w-1 bg-darck-op-30 rounded-full"></span>
-        <a href="/cases" className="text-[16px] text-darck-op-30 hover:text-darck">Кйсы</a>
+        <a href="/cases" className="text-[16px] text-darck-op-30 hover:text-darck">Кейсы</a>
         <span className="h-1 w-1 bg-darck rounded-full"></span>
         <span className="text-[16px] text-darck font-bold">{post.title.rendered}</span>
     </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-[68px] xl:text-[86px] leading-none tracking-[-4] font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-28">{post.title.rendered}
+        <h1 className="text-4xl sm:text-6xl md:text-[64px] xl:text-[76px] leading-none tracking-[-4] font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-16">{post.title.rendered}
         </h1>
       </div>
     </div>
     <div className="container ">
-      <div className="grid lg:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 gap-5 md:gap-10">
       <div className="">
-        <p className="text-xl md:text-2xl">{post.cases_descr}</p>
+        <div className="text-xl flex flex-col gap-3" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
         <div className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[32px]">Что сделано:</span>
           <div className="mt-12 grid sm:grid-cols-2 gap-5">

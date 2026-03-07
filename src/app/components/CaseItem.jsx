@@ -15,34 +15,22 @@ const fetchTags = () => {
     fetchTags()
   }, 
 [])
-console.log(tags)
-//     const tagArr = []
-// const pp = props.tags
+// console.log(tags)
+const itemTags = props.tag;
 
-//     pp.forEach((t) => {
-//   tags.forEach((tag) => {
-//     if(t === tag.id){
-//       tagArr.push(tag.name)
-//     }
-//   })
-// })
- 
+const tagArr = []
+for (var key in tags) {
+  console.log(tags[key]);
+  const h = tags[key];
+  const b = h.id;
 
-// console.log(tagArr)
+  itemTags.forEach((i) => {
+    if(b == i){
+      tagArr.push(h.name)
+    }
+  })
 
-//   const tags = [];
-  // const tagsId = props.tag;
-  // console.log(tagsId);
-  // const tag = await fetch(`http://back.19bees.ru/wp-json/wp/v2/cases_tag/15`);
-  // console.log(tag)
-//   tagsId.forEach((i) => {
-//   const tag = fetch(`http://back.19bees.ru/wp-json/wp/v2/cases_tag/15`);
-
-//   tags.push(tag);
-// });
-//  tagsId.foreach((n) => ( 
-//                tags.push(fetch(`http://back.19bees.ru/wp-json/wp/v2/cases/${n}`))  ))
-//                console.log(tags);
+}
                        
   return (
     <Link href={props.link} className="relative md:min-h-80 overflow-hidden rounded-4xl cursor-pointer">
@@ -56,13 +44,10 @@ console.log(tags)
             <p className="text-white text-lg md:text-2xl line-clamp-2">{props.descr}</p>
             </div>
             <div className="flex gap-2 mt-12 flex-wrap">
-{/* {tags.map((tag, i) => ( 
-  <span key={i} className="py-2 px-5 border-2 border-white-op-30 rounded-4xl text-white">{tag}</span>
-  ))
-                       } */}
-                      
-              <span className="py-2 px-5 border-2 border-white-op-30 rounded-4xl text-white">Веб-дизайн</span>
-              <span className="py-2 px-5 border-2 border-white-op-30 rounded-4xl text-white">Айдентика</span>
+              {tagArr.map((tag, i) => ( 
+                <span key={i} className="py-2 px-5 border-2 border-white-op-30 rounded-4xl text-white">{tag}</span>
+                ))
+              } 
             </div>
          </div>
         </div>
