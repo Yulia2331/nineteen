@@ -1,17 +1,26 @@
 'use client'
-import React, { useCallback, useEffect, useState, useRef } from 'react'
+import React, { useCallback, useEffect, useState, useRef, Suspense } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation';
 import Header from "../blocks/Header";
 // import BreadCrumbs from "../components/BreadCrumbs";
 import CaseItemCat from "../components/CaseItemCat";
 import Button from "../components/Button";
+import CaseCategories from "../components/CaseCategories";
 import Footer from "../blocks/Footer";
 import axios from "axios";
 
-export default function СasesPage() {
+function СasesPage() {
+  let p = '';
+  const searchParams = useSearchParams()
+    const pp = searchParams.get("id")
+    if(pp){
+          p = `?cases_tax=${pp}`
+    }
 const [posts, setPosts] = useState([])
 const fetchPosts = () => {
+ 
     axios
-      .get("https://back.19bees.ru/wp-json/wp/v2/cases")
+      .get(`https://back.19bees.ru/wp-json/wp/v2/cases${p}`)
       .then((res) => {
         setPosts(res.data);
       });
@@ -22,7 +31,23 @@ const fetchPosts = () => {
   }, 
 [])
 console.log(posts)
-if (!posts || posts.length === 0) return <p></p>
+if (!posts || posts.length === 0) return <div className="h-full w-full flex justify-center items-center"><div className="animate-spin h-20 w-20 rounded-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% flex justify-center items-center "><div className="h-10 w-10 bg-white rounded-full"></div></div></div>
+  return (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+        {posts.map((n, i) => ( 
+          
+          <CaseItemCat key={i} link={`case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} onClick={() => setOpId(n.id)}>
+           
+          </CaseItemCat>
+        ))
+           }
+       </div>
+    );
+}
+
+
+export default  function PageP() {
+ 
   return (
     <div className="">
       <Header></Header>
@@ -34,7 +59,7 @@ if (!posts || posts.length === 0) return <p></p>
         <a href="/cases" className="text-[16px]text-darck">Кейсы</a>
     </div>
       </div>
- <div className="marquee my-14">
+ <div className="marquee mt-10 ">
   <div className="marquee__track">
     <div className="marquee__content flex items-center gap-5">
           <img src="/img/case-text.png" alt="" className="min-w-72 mb-2"/>
@@ -57,21 +82,13 @@ if (!posts || posts.length === 0) return <p></p>
 </div>
     <div className="container"> 
       <div className="py-16">
-       <div className="flex flex-wrap gap-2 mb-10">
-          <button className="text-2xl py-2 px-6 border-2 rounded-4xl border-transparent bg-linear-to-r from-blue-400 to-blue-600 text-white">Все работы</button>
-          <button className="text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-transparent hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer">Лендинг</button>
-          <button className="text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-transparent hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer">Многостраничный сайт</button>
-          <button className="text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-transparent hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer">Интернет-магазин</button>
-       </div>
-       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-        {posts.map((n, i) => ( 
-          
-          <CaseItemCat key={i} link={`case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} onClick={() => setOpId(n.id)}>
-           
-          </CaseItemCat>
-        ))
-           }
-       </div>
+     
+    <CaseCategories></CaseCategories>
+
+    <Suspense fallback={<div>Loading...</div>}>
+      <СasesPage />
+    </Suspense>
+   
        </div>
 <div className="flex justify-center mt-10">
     <Button link="#" text="Показать больше" class="w-full  lg:w-1/3"></Button>
@@ -80,5 +97,7 @@ if (!posts || posts.length === 0) return <p></p>
     </div>
      <Footer></Footer>
     </div>
-    );
+
+    
+  )
 }

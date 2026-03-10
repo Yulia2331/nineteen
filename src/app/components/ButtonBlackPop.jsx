@@ -20,8 +20,10 @@ export default function ButtonBlackPop(props) {
 
     </button>
     {isOpen && (                       
-      <div className="h-full w-full bg-black-op-80 fixed left-0 top-0 z-40 flex items-center justify-center">
-          <div className="bg-white rounded-4xl">
+      <div className="h-full w-full fixed left-0 top-0 z-100 flex items-center justify-center">
+        <div className="h-full w-full bg-black-op-80 fixed left-0 top-0" onClick={() => setOpen(false)}></div>
+        <div className="pointer-events-none">
+          <div className="bg-white rounded-4xl relative z-10 pointer-events-auto">
             <div className="p-5 -mb-3 cursor-pointer" onClick={() => setOpen(false)}> <img src="/img/icon/arr-black.svg" alt="" className='-rotate-180'/> </div>
             <div className="bg-[url('/img/cases-item-bg.png')] bg-size-[150%_70%] bg-bottom bg-no-repeat p-8">
                 <h3 className="text-2xl sm:text-[32px] mb-5">Обсудить задачу</h3>
@@ -43,6 +45,7 @@ export default function ButtonBlackPop(props) {
                   <button className="cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] text-white p-4 whitespace-nowrap w-full mt-12">Отправить</button>
                 </form>
             </div>
+          </div>
           </div>
        </div>
                     )}

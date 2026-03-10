@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet"></link>
       </head>
       <body
-         className={`${geistMontserrat.variable} antialiased`}
+         className={`${geistMontserrat.variable} antialiased relative h-full`}
       >
         {children}
       </body>

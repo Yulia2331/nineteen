@@ -24,7 +24,7 @@ export default function Banner() {
             </div>
         <div className=" flex flex-col items-center justify-center">
                 <ButtonBlack link="https://t.me/Allakoala9" text="Запустить рекламу под ключ" class="w-full md:w-auto lg:w-1/2 mb-3"></ButtonBlack>
-                <span className="text-[16px]">(ответим в течение X минут)</span>
+                <span className="text-sm md:text-[16px]">(ответим в течение X минут)</span>
             </div>
         </div>
     </div>

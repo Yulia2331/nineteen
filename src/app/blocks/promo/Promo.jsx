@@ -2,7 +2,7 @@ import Image from "next/image";
 import ButtonPop from "../../components/ButtonPop";
 export default function Promo() {
   return (
-      <section className="h-full w-full bg-[url('/img/promo/block-bg.png')] bg-cover bg-top bg-no-repeat pb-40">
+      <section className="h-full w-full bg-[url('/img/promo/block-bg.png')] bg-cover bg-top bg-no-repeat pb-26 sm:pb-40">
       
       <div className="py-14 md:py-20 ">
       <div className="-ml-[200%] lg:-ml-[100%] translate-x-[55%] lg:translate-x-[50%] -rotate-8 sm:-rotate-5 border-b-2 border-b-[#20ADEC] border-t-2 border-t-[#20ADEC] p-1 sm:p-2 bg-white">

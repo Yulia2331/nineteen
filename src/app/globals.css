@@ -36,7 +36,7 @@
    --animate-pulse-sm: pulse-sm 2s ease-in-out infinite;
 @keyframes pulse-sm {
   50% {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 }
 
@@ -201,12 +201,13 @@ h2{
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 60px; /* Закругление */
   border: 3px solid transparent; /* Толщина обводки */
-  background: linear-gradient(90deg, #1DC1F8 6.17%, #477BEA 86.46%); /* Градиент */
+  background: linear-gradient(5deg, #1DC1F8 6.17%, #477BEA 86.46%); /* Градиент */
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   z-index: -1;
    cursor: pointer;
+   padding: 0 10px;
 }
 
 
@@ -214,3 +215,42 @@ h2{
 
  background: linear-gradient(45deg, rgba(134, 200, 255, 0.2) 36.17%, rgba(215, 29, 248, 0.4) 86.46%);
 }
+.slick-slider{
+ position: relative;
+  overflow: hidden;
+}
+.slick-list{
+   position: relative;
+}
+.slick-track{
+ display: flex;
+ overflow: hidden;
+}
+/* .slick-arrow{
+  position: fixed;
+  top: 45%;
+  width: 66px;
+  height: 66px;
+  z-index: 100;
+  color: #fff;
+  border: 2px solid #1DC1F8;
+  border-radius: 100%;
+  font-size: 0;
+  background-image: url('/img/icon/arr.svg');
+  background-repeat: no-repeat;
+  background-size: 46px;
+  background-position: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+.slick-arrow:hover{
+  background-color: #fff;
+  background-image: url('/img/icon/arr-black.svg');
+}
+.slick-next{
+  right: 40px;
+}
+.slick-prev{
+  transform: rotate(-180deg);
+  left: 40px;
+} */

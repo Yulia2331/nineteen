@@ -21,9 +21,11 @@ export default function Header() {
             <li className="cursor-pointer"><Link to="about" smooth={true} duration={1500} href="">О компании</Link></li>
             <li className="cursor-pointer"><Link to="growth" smooth={true} duration={1500} href="">Связаться</Link></li>
         </ul>
-        <a href="/promo" className="text-sm hidden">Быстрый старт</a>
-        <div className="flex items-center gap-5">
-            <div className="flex md:gap-1">
+        <a href="/promo" className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3
+        before:bg-linear-to-bl before:from-text-grad-1 before:from-5.56% before:via-text-grad-2 before:via-41.24% before:to-text-grad-3 before:to-84.31%  before:absolute before:left-0 before:top-0  relative before:h-full before:w-full before:animate-pulse  overflow-hidden before:contrast-120 ">
+            <span className="block z-20 relative">Быстрый старт</span></a>
+        <div className="sm:flex items-center gap-5 hidden">
+            <div className="flex md:gap-1 ">
                 <a href="tel:89174351919" target="_blank"><img src="/img/icon/phone.svg" alt="" /></a>
                 <a href="https://t.me/Allakoala9" target="_blank"><img src="/img/icon/tg.svg" alt="" /></a>
                 <a href="https://wa.me/37259002425" target="_blank"><img src="/img/icon/wh.svg" alt="" /></a>

@@ -53,7 +53,7 @@ console.log(posts)
         </div>
         <div className="grid lg:grid-cols-2 gap-5">
              {posts.map((n, i) => ( 
-                       <CaseItem key={i} link={`cases/case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
+                       <CaseItem key={i} link={`/cases/case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
                     ))
                        }
 
