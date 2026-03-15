@@ -1,5 +1,21 @@
+'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ContactPop from "../components/ContactPop";
+import InputMask from 'react-input-mask';
+import axios from "axios";
+
+// function PhoneInput() {
+//   return (
+//     <InputMask 
+//       mask="+7 (999) 999-99-99" 
+//       maskChar="_" 
+//       placeholder="+7 (___) ___-__-__"
+//     >
+//       {(inputProps) => <input {...inputProps} type="text" />}
+//     </InputMask>
+//   );
+// }
+
 export default function ButtonBlackPop(props) {
      const [isOpen, setOpen] = useState();
   return (  
@@ -19,7 +35,7 @@ export default function ButtonBlackPop(props) {
        <img src="/img/icon/arr.svg" alt="" className="w-5 sm:w-auto"/>
 
     </button>
-    {isOpen && (                       
+      {isOpen && (                 
       <div className="h-full w-full fixed left-0 top-0 z-100 flex items-center justify-center">
         <div className="h-full w-full bg-black-op-80 fixed left-0 top-0" onClick={() => setOpen(false)}></div>
         <div className="pointer-events-none">
@@ -48,7 +64,7 @@ export default function ButtonBlackPop(props) {
           </div>
           </div>
        </div>
-                    )}
+            )}      
 </div>
     );
 }

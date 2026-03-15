@@ -40,7 +40,7 @@ export default function Format() {
                         <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 sm:leading-6">вам важен стабильный результат, а не разовый эффект</p>
                     </div>
                 <div className="flex justify-center items-center ">
-                    <img className="w-11/12 lg:w-8/12 xl:w-5/12" src="/img/7.png" alt="" />
+                    <img className="w-11/12 lg:w-8/12 xl:w-5/12" src="/img/19.gif" alt="" />
                 </div>
             </div>
          </div>   

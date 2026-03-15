@@ -6,7 +6,8 @@
 // export default nextConfig;
 /** @type {import('next').NextConfig} */
 const nextConfig = { 
-    output: "export", trailingSlash: true,
+    output: "export", trailingSlash: true,   
     staticPageGenerationTimeout: 2000 };
+
 
 export default nextConfig;

@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useCallback, useEffect, useState, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation';
 import Header from "../../blocks/Header";
@@ -17,6 +16,7 @@ import Slider from 'react-slick';
 function CasePage() {
  const [isOpen, setOpen] = useState();
  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlidem, setCurrentSlidem] = useState(0);
   const settings = {
     dots: false,
     infinite: true,
@@ -34,22 +34,26 @@ function CasePage() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange: (oldIndex, nextIndex) => setCurrentSlidem(nextIndex),
   };
  const searchParams = useSearchParams()
-  const p = searchParams.get("id")
+  // const p = searchParams.get("slug")
+  // console.log(searchParams);
   const [post, setPost] = useState([])
   const fetchPost = () => {
     axios
-      .get(`https://back.19bees.ru/wp-json/wp/v2/cases/${p}`)
+      .get(`https://back.19bees.ru/wp-json/wp/v2/cases/?slug=${searchParams}`)
       .then((res) => {
-        setPost(res.data);
+        setPost(res.data[0]);
       });
   }
 
   useEffect(() => {
     fetchPost()
   }, 
+  
 [])
+// console.log(post);
 const slider = React.useRef(null);
 const sliderm = React.useRef(null);
 if (!post || post.length === 0) return <div className="h-full w-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% absolute top-0"></div>
@@ -66,17 +70,17 @@ return(
           <div className="w-full md:w-6/12 pointer-events-auto">
           <Slider ref={slider} {...settings}>
             {image.map((n, i) => ( 
-              <div className="overflow-hidden px-1">
-                <img src={n.item_img} key={i} alt="" className="w-full"/>
+              <div key={i} className="overflow-hidden px-1">
+                <img src={n.item_img} alt="" className="w-full"/>
               </div>
                     ))
                   }
             </Slider>
              <div className="fixed bottom-6 left-0 w-full flex justify-center">
             <div className="h-10 w-38 md:h-16 md:w-60 bg-white border-2 border-[#1DC1F8] rounded-4xl flex items-center justify-between p-4">
-              <button onClick={() => slider?.current?.slickPrev()} className="cursor-pointer -rotate-180 "><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9'/></button>
+              <button onClick={() => slider?.current?.slickPrev()} className="cursor-pointer -rotate-180 "><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
                 <span className="md:text-3xl text-darck-op-30">{currentSlide + 1}/{image.length}</span>
-              <button onClick={() => slider?.current?.slickNext()} className="cursor-pointer"><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9'/></button>
+              <button onClick={() => slider?.current?.slickNext()} className="cursor-pointer"><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
             </div>
             </div>
             </div>
@@ -86,9 +90,9 @@ return(
       )}
       <Header></Header>
       <div className="mb-20">
-        <div className="flex items-center justify-between fixed w-full top-10/12 md:top-5/12 xl:px-10 z-30">
-          <a href={`/cases/case?id=${post.prev_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 rotate-180'/></a>
-          <a href={`/cases/case?id=${post.next_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center"><img src="/img/icon/arr.svg" alt="" className='xl:w-10'/></a>
+        <div className="flex items-center justify-between fixed w-full top-10/12 md:top-5/12 xl:px-10 z-30 pointer-events-none">
+          <a href={`/cases/case?id=${post.prev_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 rotate-180'/></a>
+          <a href={`/cases/case?id=${post.next_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10'/></a>
         </div>
       <div className="bg-[url('/img/sot.png')] bg-cover sm:bg-size-[75%_100%] lg:bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto pb-14">
       <div className="container">
@@ -101,7 +105,7 @@ return(
         <span className="text-[16px] text-darck font-bold">{post.title.rendered}</span>
     </div>
 
-        <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-[64px] xl:text-[76px] leading-none tracking-tight font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-16">{post.title.rendered}
+        <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-[64px] xl:text-[76px] leading-none tracking-tight font-bold uppercase bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% mt-16 py-2">{post.title.rendered}
         </h1>
       </div>
     </div>
@@ -124,12 +128,19 @@ return(
         {/* <img className="w-full" src={post.cases_mainimg} alt="" /> */}
          <Slider ref={sliderm} {...settingsm}>
             {image.map((n, i) => ( 
-              <div className="overflow-hidden px-2">
-                <img src={n.item_img} key={i} alt="" className="w-full"/>
+              <div key={i} className="overflow-hidden px-2">
+                <img src={n.item_img} alt="" className="w-full"/>
               </div>
                     ))
                   }
             </Slider>
+              <div className="w-full flex justify-center">
+            <div className="h-10 w-38 md:h-16 md:w-60 bg-white border-2 border-[#1DC1F8] rounded-4xl flex items-center justify-between p-4">
+              <button onClick={() => sliderm?.current?.slickPrev()} className="cursor-pointer -rotate-180 "><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
+                <span className="md:text-3xl text-darck-op-30">{currentSlidem + 1}/{image.length}</span>
+              <button onClick={() => sliderm?.current?.slickNext()} className="cursor-pointer"><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
+            </div>
+            </div>
         <img onClick={() => setOpen(true)} className="w-10 md:w-16 absolute top-4 right-4 md:top-8 md:right-8 cursor-pointer" src="/img/icon/pop-trig.svg" alt="" />
       </div>
       </div>

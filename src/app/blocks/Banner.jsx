@@ -2,7 +2,10 @@ import Image from "next/image";
 import Button from "../components/Button";
 export default function Banner() {
   return (
-    <div className="container">    
+    <div className="container">  
+                        {/* <video autoPlay loop muted className="absolute top-0 left-0 w-full ">
+                   <source src="/img/6.mp4" type="video/mp4" />
+                 </video>  */}
 <div className="flex-col md:flex-row flex justify-between md:items-center relative mt-10">
     <div className="lg:flex-1 relative z-20">
     <h1 className="text-4xl xs:text-5xl sm:text-[56px] lg:text-[68px] xl:text-[86px] leading-none tracking-tight font-bold uppercase">

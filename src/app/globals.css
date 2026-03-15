@@ -186,7 +186,7 @@ h2{
 
 .gradient-button {
   position: relative;
-  padding: 16px;
+  padding: 12px;
   background: transparent; /* Прозрачный фон */
   border-radius: 60px; /* Закругление */
   z-index: 1;

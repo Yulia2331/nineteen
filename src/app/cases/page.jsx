@@ -36,7 +36,7 @@ if (!posts || posts.length === 0) return <div className="h-full w-full flex just
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {posts.map((n, i) => ( 
           
-          <CaseItemCat key={i} link={`case?id=${n.id}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} onClick={() => setOpId(n.id)}>
+          <CaseItemCat key={i} link={`case/?${n.slug}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} onClick={() => setOpId(n.id)}>
            
           </CaseItemCat>
         ))

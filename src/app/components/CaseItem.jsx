@@ -33,15 +33,15 @@ for (var key in tags) {
 }
                        
   return (
-    <Link href={props.link} className="relative md:min-h-80 overflow-hidden rounded-4xl cursor-pointer">
+    <Link href={props.link} className="relative h-[280px] overflow-hidden rounded-4xl cursor-pointer">
       <div className="absolute w-full overflow-hidden rounded-4xl">
         <img className="w-full rounded-4xl" src={props.img} alt="" />
       </div>
         <div className="relative z-30 bg-[url('/img/cases-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 hover:opacity-100 transition-all duration-[.8s]">
-         <div className="p-5 sm:p-10 lg:p-13 flex flex-col justify-between h-full">
+         <div className="p-5 sm:p-10 lg:p-10 flex flex-col justify-between h-full">
           <div className="">
-            <h3 className="text-white text-2xl md:text-[32px] uppercase mb-3">{props.title}</h3>
-            <p className="text-white text-lg md:text-2xl line-clamp-2">{props.descr}</p>
+            <h3 className="text-white text-2xl md:text-[28px] uppercase mb-3">{props.title}</h3>
+            <p className="text-white text-lg md:text-xl leading-7 line-clamp-2">{props.descr}</p>
             </div>
             <div className="flex gap-2 mt-12 flex-wrap">
               {tagArr.map((tag, i) => ( 
@@ -51,8 +51,6 @@ for (var key in tags) {
             </div>
          </div>
         </div>
-      
-
     </Link>
         );
 }
