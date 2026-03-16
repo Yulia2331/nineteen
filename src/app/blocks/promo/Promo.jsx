@@ -1,7 +1,29 @@
-import Image from "next/image";
-import ButtonPop from "../../components/ButtonPop";
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Promo() {
+   const [isVisible, setIsVisible] = useState(false);
+        const ref = useRef(null);
+      
+        useEffect(() => {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target); // Остановить наблюдение
+              }
+            },
+            { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+          );
+      
+          if (ref.current) {
+            observer.observe(ref.current);
+          }
+      
+          return () => {
+            if (ref.current) observer.unobserve(ref.current);
+          };
+        }, []);
   return (
+    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
       <section className="h-full w-full bg-[url('/img/promo/block-bg.png')] bg-cover bg-top bg-no-repeat pb-26 sm:pb-40">
       
       <div className="py-14 md:py-20 ">
@@ -44,17 +66,18 @@ export default function Promo() {
 
       <div className="container">
         <div className="grid xs:grid-cols-3 gap-3 xs:gap-2 md:gap-3 lg:gap-5 md:mt-3">
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Посадочная страница — центр воронки продаж</p>
+          <div className="p-5 xs:p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
+            <p className="text-lg xs:text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Посадочная страница — центр воронки продаж</p>
           </div>
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl xs:translate-y-8 md:translate-y-12">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Реклама приводит трафик. Сайт решает, станет ли он заявками</p>
+          <div className="p-5 xs:p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl xs:translate-y-8 md:translate-y-12">
+            <p className="text-lg xs:text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Реклама приводит трафик. Сайт решает, станет ли он заявками</p>
           </div>
-          <div className="p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-4 sm:leading-5 md:leading-7 lg:leading-9">Собираем сайт под вашу воронку и сразу подключаем аналитику</p>
+          <div className="p-5 xs:p-3 sm:p-5 lg:px-8 lg:pr-10 bg-white rounded-[20px] md:rounded-4xl ">
+            <p className="text-lg xs:text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-5 xs:leading-4 sm:leading-5 md:leading-7 lg:leading-9">Собираем сайт под вашу воронку и сразу подключаем аналитику</p>
           </div>
         </div>
       </div>
     </section>
+    </div>
     );
 }

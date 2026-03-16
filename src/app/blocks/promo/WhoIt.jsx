@@ -1,8 +1,32 @@
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function WhoIt() {
+   const [isVisible, setIsVisible] = useState(false);
+        const ref = useRef(null);
+      
+        useEffect(() => {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target); // Остановить наблюдение
+              }
+            },
+            { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+          );
+      
+          if (ref.current) {
+            observer.observe(ref.current);
+          }
+      
+          return () => {
+            if (ref.current) observer.unobserve(ref.current);
+          };
+        }, []);
   return (
+    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
          <section className="my-10 lg:my-20">
       <div className="container">
-        <div className="mb-8 sm:mb-12 flex items-center justify-center gap-2 md:gap-8">
+        <div className="mb-8 sm:mb-7 flex items-center justify-center gap-2 md:gap-8">
           <img src="/img/promo/sm-star.svg" alt="" className="w-10 xs:w-12 md:w-auto"/>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Кому подходит</h2>
         </div>
@@ -15,5 +39,6 @@ export default function WhoIt() {
         </div>
       </div>
     </section>
+    </div>
     );
 }

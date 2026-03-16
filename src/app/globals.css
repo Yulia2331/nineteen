@@ -45,7 +45,7 @@
 
 @keyframes bounce-sm {
   0%, 100% {
-    transform: translateY(-25%);
+    transform: translateY(-20%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
@@ -174,7 +174,7 @@ h2{
 
 .fade-block {
   opacity: 0;
-  transform: translateY(80px) scale(.85); /* Эффект смещения */
+  transform: translateY(65px) scale(.87); /* Эффект смещения */
   transition: opacity 1.2s ease-out, transform .6s ease-out;
 }
 

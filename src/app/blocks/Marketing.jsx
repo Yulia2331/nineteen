@@ -39,7 +39,7 @@ export default function Marketing() {
                   </a>
             </div>
 
-        <div className=" pb-24 sm:pb-40 gap-2 sm:gap-3 lg:gap-5
+        <div className=" pb-42 sm:pb-52 lg:pb-30 gap-2 sm:gap-3 lg:gap-5
         grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-end justify-center sm:justify-between text-center
         ">
                 <MarketingItem title="Стратегия" src="/img/marketing/1.png" text="Чёткая дорожная карта роста на основе анализа клиентов и рынка" class="rounded-tl-[100px]"/>

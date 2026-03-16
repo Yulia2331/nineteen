@@ -91,8 +91,8 @@ return(
       <Header></Header>
       <div className="mb-20">
         <div className="flex items-center justify-between fixed w-full top-10/12 md:top-5/12 xl:px-10 z-30 pointer-events-none">
-          <a href={`/cases/case?id=${post.prev_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 rotate-180'/></a>
-          <a href={`/cases/case?id=${post.next_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10'/></a>
+          <a href={`/cases/case?${post.prev_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 rotate-180 pointer-events-none'/></a>
+          <a href={`/cases/case?${post.next_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 pointer-events-none'/></a>
         </div>
       <div className="bg-[url('/img/sot.png')] bg-cover sm:bg-size-[75%_100%] lg:bg-size-[50%_100%] bg-right bg-no-repeat py-6 max-w-[1450px] m-auto pb-14">
       <div className="container">
@@ -112,7 +112,7 @@ return(
     <div className="container ">
       <div className="grid lg:grid-cols-2 md:gap-10">
       <div className="">
-        <div className="text-xl flex flex-col gap-3" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
+        <div className="text-xl flex flex-col gap-1.5" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
         <div className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[28px] md:text-[32px]">Что сделано:</span>
           <div className="mt-8 md:mt-12 grid sm:grid-cols-2 gap-5">

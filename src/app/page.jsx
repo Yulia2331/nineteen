@@ -54,9 +54,9 @@ export default function Home() {
       <Element name="cases">
         <Cases></Cases>
       </Element>
-      <div className="h-full w-full bg-[url('/img/bg-2.png')] bg-size-[100%_100%] bg-top bg-no-repeat py-20 lg:py-32 mb-10">
+      <div className="h-full w-full bg-[url('/img/bg-2.png')] bg-size-[100%_100%] bg-top bg-no-repeat py-20 lg:py-32">
         <Scheme></Scheme>
-        <div className="flex flex-col items-center text-center mb-14 lg:mb-20">
+        <div className="flex flex-col items-center text-center mb-14 lg:mb-26">
           <span className="text-xl md:text-2xl font-bold leading-5 md:leading-6 ">Хотите усилить свой маркетинг?</span>
           <ButtonBlack link="https://t.me/Allakoala9" text="Запланировать диагностику маркетинга" class="sm:px-8 my-6"/>
           <span className="text-sm">Если вам нужен рост, который можно считать и масштабировать</span>
@@ -64,7 +64,7 @@ export default function Home() {
         <AfterContacting></AfterContacting>
          <Format></Format>
       </div>
-             <div className="marquee mb-32">
+             <div className="marquee mb-18 sm:mb-32">
   <div className="marquee__track">
     <div className="marquee__content flex gap-5">
             <img src="/img/logo.svg" alt="" className="w-24"/>
@@ -86,8 +86,8 @@ export default function Home() {
           <Growth></Growth>
         </Element>
         <div className="container relative">
-          <div className={`fixed bottom-3 right-3 z-50 transition-all duration-[.8s] ${op}`}>
-                  <ButtonBlack link="https://t.me/Allakoala9" text="Начать проект" class="w-72"/>
+          <div className={`fixed  bottom-3 right-3 z-50 transition-all duration-[.8s] ${op}`}>
+                  <ButtonBlack link="https://t.me/Allakoala9" text="Начать проект" class="w-52 sm:w-72"/>
           </div>
         </div>
         {isOpen && (

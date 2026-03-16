@@ -38,6 +38,6 @@ export default function Header() {
     </div>
 </div>
 </header>
-<div className="pt-16 lg:pt-28"></div></div>
+<div className="pt-16 lg:pt-22"></div></div>
     );
 }

@@ -1,14 +1,38 @@
 import Image from "next/image";
 import ButtonBlackPop from "../../components/ButtonBlackPop";
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Cost() {
+   const [isVisible, setIsVisible] = useState(false);
+        const ref = useRef(null);
+      
+        useEffect(() => {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target); // Остановить наблюдение
+              }
+            },
+            { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+          );
+      
+          if (ref.current) {
+            observer.observe(ref.current);
+          }
+      
+          return () => {
+            if (ref.current) observer.unobserve(ref.current);
+          };
+        }, []);
   return (
+    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
     <div className="overflow-hidden -mt-14 md:mt-0 pt-14">
      <section className="relative pt-20">
       <img src="/img/promo/line-foot.png" alt="" className=" absolute left-0 top-5  lg:-left-14 lg:top-0 lg:scale-115" />
       <div className="w-full py-12 bg-linear-to-r from-blue-400 to-blue-600">
         <div className="container">
           <div className="z-20 relative">
-           <div className="mb-6 md:mb-12 flex items-center justify-center gap-2 md:gap-8">
+           <div className="mb-6 md:mb-9 flex items-center justify-center gap-2 md:gap-8">
                 <img src="/img/promo/sm-star.svg" alt="" className="w-10 xs:w-12 md:w-auto"/>
                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center text-white">Формат и стоимость</h2>
              </div>
@@ -32,6 +56,7 @@ export default function Cost() {
         </div>
       </div>
       </section>
+      </div>
       </div>
     );
 }
