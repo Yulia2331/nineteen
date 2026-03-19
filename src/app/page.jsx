@@ -41,25 +41,24 @@ export default function Home() {
             }, []);
 
   return (
-    <div className="min-h-screen justify-center w-full overflow-hidden ">
+    <div className="min-h-screen justify-center w-full overflow-hidden relative">
       <div className="h-full w-full bg-[url('/img/bg-1.png')] bg-size-[100%_100%] bg-top bg-no-repeat">
           <Header></Header> 
-          <Element name="about">
             <Banner></Banner>
-          </Element> 
-           <Element name="marketing">
-            <Marketing></Marketing>
-         </Element>
+
+           <Marketing></Marketing>
       </div>
-      <Element name="cases">
+     
         <Cases></Cases>
-      </Element>
+      
       <div className="h-full w-full bg-[url('/img/bg-2.png')] bg-size-[100%_100%] bg-top bg-no-repeat py-20 lg:py-32">
+ 
         <Scheme></Scheme>
+       
         <div className="flex flex-col items-center text-center mb-14 lg:mb-26">
           <span className="text-xl md:text-2xl font-bold leading-5 md:leading-6 ">Хотите усилить свой маркетинг?</span>
           <ButtonBlack link="https://t.me/Allakoala9" text="Запланировать диагностику маркетинга" class="sm:px-8 my-6"/>
-          <span className="text-sm">Если вам нужен рост, который можно считать и масштабировать</span>
+          <span className="text-sm px-5">Если вам нужен рост, который можно считать и масштабировать</span>
         </div>
         <AfterContacting></AfterContacting>
          <Format></Format>
@@ -82,9 +81,9 @@ export default function Home() {
 </div>
         <Numbers></Numbers>
         <WhenCome></WhenCome>
-        <Element name="growth">
+        
           <Growth></Growth>
-        </Element>
+       
         <div className="container relative">
           <div className={`fixed  bottom-3 right-3 z-50 transition-all duration-[.8s] ${op}`}>
                   <ButtonBlack link="https://t.me/Allakoala9" text="Начать проект" class="w-52 sm:w-72"/>

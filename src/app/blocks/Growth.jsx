@@ -7,7 +7,7 @@ import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Growth() {
     const [isOpen, setOpen] = useState();
   return (
-    <div className="bg-linear-to-r from-blue-400 to-blue-600 w-full relative overflow-hidden">
+    <div id="growth" className="bg-linear-to-r from-blue-400 to-blue-600 w-full relative overflow-hidden">
          {/* {isOpen && (                       
                 <ContactPop></ContactPop>
                 )} */}

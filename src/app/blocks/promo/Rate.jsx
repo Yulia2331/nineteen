@@ -23,7 +23,7 @@ export default function Rate() {
           };
         }, []);
   return (
-    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
+    <div className={`relative z-20 fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
        <section className="my-10 lg:my-20">
       <div className="container">
         <div className="mb-8 sm:mb-5">

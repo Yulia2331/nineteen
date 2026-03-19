@@ -25,18 +25,20 @@ export default function Blot() {
           };
         }, []);
   return (
+       <section className="">
      <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
-     <section className="h-full w-full">
+     <div className="h-full w-full">
       <div className="flex justify-center">
-        <img src="/img/promo/blot-full.svg" alt="" className="scale-120 md:scale-100"/>
+        <img src="/img/promo/blot-full.svg" alt="" className="scale-130 -translate-x-1 md:translate-x-0 md:scale-100"/>
       </div>
-      <div className="container">
-       <div className="flex flex-col items-center justify-center mt-6 md:mt-12">
-            <ButtonPop text="Быстрый старт" class="w-48 md:w-72 mb-3"></ButtonPop>
+    </div>
+    </div>
+          <div className="container">
+       <div className="flex flex-col items-center justify-center mt-12">
+            <ButtonPop text="Быстрый старт" class="w-48 md:w-72 mb-1 md:mb-3"></ButtonPop>
             <span className="text-sm md:text-[16px]">Вход в зону роста</span>
           </div>
       </div>
     </section>
-    </div>
     );
 }

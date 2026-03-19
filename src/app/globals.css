@@ -224,7 +224,7 @@ h2{
 }
 .slick-track{
  display: flex;
- overflow: hidden;
+  overflow: hidden;
 }
 /* .slick-arrow{
   position: fixed;

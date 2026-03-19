@@ -12,8 +12,8 @@ export default function CaseItemCat(props) {
        
       
  <div className="py-5">
-            <h3 className="text-2xl md:text-[28px] uppercase mb-3">{props.title}</h3>
-            <p className="text-lg md:text-xl line-clamp-2">{props.descr}</p>
+            <h3 className="text-2xl md:text-[28px] uppercase mb-3 pr-2">{props.title}</h3>
+            <p className="text-lg md:text-xl line-clamp-2 pr-10">{props.descr}</p>
             </div>
     </Link>
         );

@@ -5,7 +5,7 @@ export default  function CaseItem(props) {
       const [tags, setTags] = useState([])
 const fetchTags = () => {
     axios
-      .get("http://back.19bees.ru/wp-json/wp/v2/cases_tag")
+      .get("https://back.19bees.ru/wp-json/wp/v2/cases_tag")
       .then((res) => {
         setTags(res.data);
       });

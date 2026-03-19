@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useEffect, useState, Suspense } from 'react'
+import React, { useCallback, useEffect, useState, Suspense, useRef } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation';
 import Header from "../../blocks/Header";
 import BreadCrumbs from "../../components/BreadCrumbs";
@@ -24,7 +24,7 @@ function CasePage() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
      beforeChange: (oldIndex, nextIndex) => setCurrentSlide(nextIndex),
   };
   const settingsm = {
@@ -34,6 +34,7 @@ function CasePage() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+
     beforeChange: (oldIndex, nextIndex) => setCurrentSlidem(nextIndex),
   };
  const searchParams = useSearchParams()
@@ -56,21 +57,44 @@ function CasePage() {
 // console.log(post);
 const slider = React.useRef(null);
 const sliderm = React.useRef(null);
+ const [vis1, setVis1] = useState(false);
+const r1 = useRef(null);
+            useEffect(() => {
+              const observer = new IntersectionObserver(
+                ([entry]) => {
+                  if (entry.isIntersecting) {
+                    setVis1(true);
+                    observer.unobserve(entry.target); // Остановить наблюдение
+                  }
+                },
+                { threshold: 0.1 } // Срабатывает, когда видно 10% блока
+              );
+          
+              if (r1.current) {
+                observer.observe(r1.current);
+              }
+          
+              return () => {
+                if (r1.current) observer.unobserve(r1.current);
+              };
+            }, []);
+
+
 if (!post || post.length === 0) return <div className="h-full w-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% absolute top-0"></div>
   const wh = post.cases_cards;
   const image = post.cases_popup;
 return(
   <div className="relative">
     {isOpen && (  
-      <div className="h-full w-full  fixed top-0 z-50 overflow-y-scroll">
-        <div className="bg-black-op-80 h-full w-full fixed top-0" onClick={() => setOpen(false)}></div>
+      <div className="h-screen w-full fixed top-0 z-50 overflow-hidden">
+        <div className="bg-black-op-80 h-full w-full fixed top-0 " onClick={() => setOpen(false)}></div>
         <div className="container">
           <div className="flex justify-center relative pointer-events-none">
             <button onClick={() => setOpen(false)} className="text-white text-4xl md:text-6xl fixed top-0 left-0 md:left-10 cursor-pointer">&times;</button>
-          <div className="w-full md:w-6/12 pointer-events-auto">
-          <Slider ref={slider} {...settings}>
+          <div className="w-full md:w-6/12 pointer-events-auto overflow-hidden">
+          <Slider ref={slider} {...settings} className=''>
             {image.map((n, i) => ( 
-              <div key={i} className="overflow-hidden px-1">
+              <div key={i} className="px-1 h-screen overflow-y-auto">
                 <img src={n.item_img} alt="" className="w-full"/>
               </div>
                     ))
@@ -109,11 +133,11 @@ return(
         </h1>
       </div>
     </div>
-    <div className="container ">
-      <div className="grid lg:grid-cols-2 md:gap-10">
+    <div className="container">
+      <div className="grid lg:grid-cols-2 md:gap-10  overflow-hidden">
       <div className="">
         <div className="text-xl flex flex-col gap-1.5" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
-        <div className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
+        <div  className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[28px] md:text-[32px]">Что сделано:</span>
           <div className="mt-8 md:mt-12 grid sm:grid-cols-2 gap-5">
             {wh.map((n, i) => ( 
@@ -126,7 +150,8 @@ return(
       </div>
       <div className="relative mt-10 lg:mt-0 overflow-hidden">
         {/* <img className="w-full" src={post.cases_mainimg} alt="" /> */}
-         <Slider ref={sliderm} {...settingsm}>
+
+         <Slider ref={sliderm} {...settingsm} className=''>
             {image.map((n, i) => ( 
               <div key={i} className="overflow-hidden px-2">
                 <img src={n.item_img} alt="" className="w-full"/>
@@ -134,8 +159,9 @@ return(
                     ))
                   }
             </Slider>
+
               <div className="w-full flex justify-center">
-            <div className="h-10 w-38 md:h-16 md:w-60 bg-white border-2 border-[#1DC1F8] rounded-4xl flex items-center justify-between p-4">
+            <div className={`lg:fixed lg:bottom-5 h-10 w-38 md:h-16 md:w-60  border-2 bg-white border-[#1DC1F8] rounded-4xl  items-center justify-between p-4 flex  `}>
               <button onClick={() => sliderm?.current?.slickPrev()} className="cursor-pointer -rotate-180 "><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
                 <span className="md:text-3xl text-darck-op-30">{currentSlidem + 1}/{image.length}</span>
               <button onClick={() => sliderm?.current?.slickNext()} className="cursor-pointer"><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
@@ -154,7 +180,7 @@ return(
 export default  function Page() {
  
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense  fallback={<div>Loading...</div>}>
       <CasePage />
     </Suspense>
     

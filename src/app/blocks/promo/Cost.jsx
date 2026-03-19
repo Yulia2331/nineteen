@@ -27,8 +27,9 @@ export default function Cost() {
   return (
     <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
     <div className="overflow-hidden -mt-14 md:mt-0 pt-14">
-     <section className="relative pt-20">
-      <img src="/img/promo/line-foot.png" alt="" className=" absolute left-0 top-5  lg:-left-14 lg:top-0 lg:scale-115" />
+     <section className="relative pt-20 sm:pt-20">
+      <img src="/img/promo/line-foot.png" alt="" className=" absolute left-0 top-5  lg:-left-14 lg:top-0 lg:scale-115 hidden sm:block" />
+      <img src="/img/promo/line-foot-mob.png" alt="" className=" absolute w-full  object-cover top-0 bottom-0 sm:hidden" />
       <div className="w-full py-12 bg-linear-to-r from-blue-400 to-blue-600">
         <div className="container">
           <div className="z-20 relative">
@@ -50,7 +51,7 @@ export default function Cost() {
           <span className="text-[16px] sm:text-xl md:text-2xl text-white text-center block mt-4">Цена, сроки и ожидаемый результат фиксируются до старта</span>
           <div className="mt-6 md:mt-14 flex flex-col justify-center items-center gap-2">
               <ButtonBlackPop text="Запустить рекламу под ключ"/>
-              <span className="text-sm md:text-[16px] text-white text-center">Если заявки нужны сейчас, а не после «идеального брендинга»</span>
+              <span className="text-sm md:text-[16px] text-white text-center">Если заявки нужны сейчас</span>
           </div>
         </div>
         </div>

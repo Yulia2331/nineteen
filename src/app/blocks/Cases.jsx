@@ -43,14 +43,14 @@ console.log(posts)
     };
   }, []);
   return (
-    <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
+    <div id="cases" className={`fade-block ${isVisible ? 'visible' : ''} -mt-10 pt-10`}  ref={ref}>
     <div className="container">
         <div className="mb-5">
             <div className="flex justify-between items-center  ">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2]">наши кейсы</h2>
             </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-y-2 gap-x-2 lg:gap-x-5 justify-center">
+        <div className="grid md:grid-cols-2 gap-y-4 lg:gap-y-2 gap-x-2 lg:gap-x-5 justify-center">
              {posts.map((n, i) => ( 
                        <CaseItem key={i} link={`/cases/case/?${n.slug}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
                     ))

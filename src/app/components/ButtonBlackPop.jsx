@@ -49,7 +49,7 @@ export default function ButtonBlackPop(props) {
                     <img src="/img/icon/tg.svg" alt="" />
                     <span className="text-[16px]">Telegram</span>
                   </a>
-                   <a href="" className="flex items-center gap-1">
+                   <a href="https://max.ru/u/f9LHodD0cOL1TBKpIYV2yvfq7IPI0UFN4TRvrHlzh88Y3BU8ff3tQ3Sybic" className="flex items-center gap-1">
                     <img src="/img/icon/max.svg" alt="" />
                     <span className="text-[16px]">Max</span>
                   </a>
