@@ -1,5 +1,5 @@
-import Image from "next/image";
 import ButtonBlackPop from "../../components/ButtonBlackPop";
+import ExportedImage from "next-image-export-optimizer";
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Cost() {
    const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +34,7 @@ export default function Cost() {
         <div className="container">
           <div className="z-20 relative">
            <div className="mb-6 md:mb-9 flex items-center justify-center gap-2 md:gap-8">
-                <img src="/img/promo/sm-star.svg" alt="" className="w-10 xs:w-12 md:w-auto"/>
+                <ExportedImage className="w-10 xs:w-12 md:w-auto" width={220} height={220}  src="/img/promo/sm-star.svg" alt="Static Image" />
                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center text-white">Формат и стоимость</h2>
              </div>
           <div className="grid sm:grid-cols-3 gap-2 md:gap-5 lg:gap-7 text-center sm:text-left">

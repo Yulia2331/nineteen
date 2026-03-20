@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function WhoIt() {
    const [isVisible, setIsVisible] = useState(false);
         const ref = useRef(null);
@@ -27,7 +28,7 @@ export default function WhoIt() {
          <section className="my-10 lg:my-20">
       <div className="container">
         <div className="mb-8 sm:mb-7 flex items-center justify-center gap-2 md:gap-8">
-          <img src="/img/promo/sm-star.svg" alt="" className="w-10 xs:w-12 md:w-auto"/>
+          <ExportedImage className="w-10 xs:w-12 md:w-auto" width={220} height={220}  src="/img/promo/sm-star.svg" alt="Static Image" />
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Кому подходит</h2>
         </div>
         <div className="md:text-lg lg:text-2xl grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 items-center sm:items-start">

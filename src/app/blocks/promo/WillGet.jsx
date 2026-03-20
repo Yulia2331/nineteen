@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function WillGet() {
       const [isVisible, setIsVisible] = useState(false);
            const ref = useRef(null);
@@ -27,7 +28,7 @@ export default function WillGet() {
       <section className="">
            <div className="container">
              <div className="mb-7 sm:mb-9 flex items-center justify-center gap-1.5 md:gap-8">
-                <img src="/img/promo/sm-star.svg" alt="" />
+                <ExportedImage className="w-10 xs:w-12 md:w-auto" width={220} height={220}  src="/img/promo/sm-star.svg" alt="Static Image" />
                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[-1] md:tracking-[-2] text-center">Что вы получаете на выходе</h2>
              </div>
               <div className="mb-14 md:mb-20 lg:mb-24 relative">

@@ -1,5 +1,5 @@
 'use client'
-
+import ExportedImage from "next-image-export-optimizer";
 import Header from "../blocks/Header";
 import Footer from "../blocks/Footer";
 import Banner from "../blocks/promo/Banner";
@@ -27,8 +27,7 @@ export default function PromoPage() {
 
       <WhoIt></WhoIt>
 
-    <img src="/img/promo/bee.png" alt="" className=" absolute right-0 md:top-[12%] lg:top-[15.5%] translate-x-1/2 -z-10 scale-85 xl:scale-90"/>
-
+<ExportedImage className="absolute right-0 md:top-[12%] lg:top-[8.5%] translate-x-1/2 -z-10 scale-85 xl:scale-90" width={820} height={820}  src="/img/promo/bee.png" alt="Static Image" />
       <Doing></Doing>
 
      <Star></Star>
@@ -43,8 +42,10 @@ export default function PromoPage() {
      
 
     <div className="h-full w-full relative ">
-      <img src="/img/promo/line-center-2.png" alt="" className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block"/>
-     <img src="/img/promo/line-center2-mob.png" alt="" className="z-10 absolute left-0 md:left-3 h-full -top-46 sm:hidden"/>
+      {/* <img src="/img/promo/line-center-2.png" alt="" className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block"/>
+     <img src="/img/promo/line-center2-mob.png" alt="" className="z-10 absolute left-0 md:left-3 h-full -top-46 sm:hidden"/> */}
+     <ExportedImage className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block" width={408} height={720}  src="/img/promo/line-center-2.png" alt="Static Image" />
+     <ExportedImage className="z-10 absolute left-0 md:left-3 h-full -top-46 sm:hidden" width={383} height={2420}  src="/img/promo/line-center2-mob.png" alt="Static Image" />
      <Rate></Rate>
       <Sale></Sale>
       

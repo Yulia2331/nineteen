@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ButtonPop from "../../components/ButtonPop";
+import ExportedImage from "next-image-export-optimizer";
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function Blot() {
    const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +30,7 @@ export default function Blot() {
      <div className={`fade-block ${isVisible ? 'visible' : ''}`}  ref={ref}>
      <div className="h-full w-full">
       <div className="flex justify-center">
-        <img src="/img/promo/blot-full.svg" alt="" className="scale-130 -translate-x-1 md:translate-x-0 md:scale-100"/>
+        <ExportedImage className="scale-130 -translate-x-1 md:translate-x-0 md:scale-100" width={1920} height={1920}  src="/img/promo/blot-full.svg" alt="Static Image" />
       </div>
     </div>
     </div>

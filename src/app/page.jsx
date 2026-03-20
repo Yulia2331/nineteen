@@ -20,6 +20,7 @@ import ContactPop from "./components/ContactPop";
 import Footer from "./blocks/Footer";
 import Test from "./blocks/Test";
 import { Link, Element } from 'react-scroll';
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Home() {
   const [isOpen, setOpen] = useState();

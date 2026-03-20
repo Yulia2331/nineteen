@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function Button(props) {
     const [isOpen, setOpen] = useState();
   return ( 
@@ -13,7 +14,7 @@ export default function Button(props) {
     `}>
         <span>{props.text}</span>
         
-       <img src="/img/icon/arr-black.svg" alt="" className="w-5 sm:w-auto"/>
+       <ExportedImage className="w-5 sm:w-auto" width={10} height={10}  src="/img/icon/arr-black.svg" alt="->" />
 
     </button>  
       {isOpen && (                       

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function Direct() {
   const [isOpen, setOpen] = useState();
    const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +43,8 @@ export default function Direct() {
                      
                     </div>
                 </div>
-                <img src="/img/promo/man.png" alt="" className="w-[250px] xs:w-[290px] sm:w-[500px] md:w-[550px] lg:w-[780px] absolute right-0 sm:left-[45%] bottom-0"/>
+                {/* <img src="/img/promo/man.png" alt="" className="w-[250px] xs:w-[290px] sm:w-[500px] md:w-[550px] lg:w-[780px] absolute right-0 sm:left-[45%] bottom-0"/> */}
+                <ExportedImage className="w-[250px] xs:w-[290px] sm:w-[500px] md:w-[550px] lg:w-[780px] absolute right-0 sm:left-[45%] bottom-0" width={810} height={648}  src="/img/promo/man.png" alt="Static Image" />
               </section>
     </div>
      {isOpen && (                       

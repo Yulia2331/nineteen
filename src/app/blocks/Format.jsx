@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function Format() {
           const [isVisible, setIsVisible] = useState(false);
       const ref = useRef(null);
@@ -40,7 +41,8 @@ export default function Format() {
                         <p className="text-sm sm:text-lg md:text-xl lg:text-2xl tracking-[-.8] leading-3.5 sm:leading-6">вам важен стабильный результат, а не разовый эффект</p>
                     </div>
                 <div className="flex justify-center items-center ">
-                    <img className="w-11/12 lg:w-8/12 xl:w-5/12" src="/img/19.gif" alt="" />
+                  <ExportedImage className="w-11/12 lg:w-8/12 xl:w-5/12" width={3840} height={3840}  src="/img/19.gif" alt="Static Image" unoptimized={true}/>
+                    {/* <img className="w-11/12 lg:w-8/12 xl:w-5/12" src="/img/19.gif" alt="" /> */}
                 </div>
             </div>
          </div>   

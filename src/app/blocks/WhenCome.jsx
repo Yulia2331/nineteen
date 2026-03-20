@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function WhenCome() {
     const [isVisible, setIsVisible] = useState(false);
                 const ref = useRef(null);
@@ -34,21 +35,22 @@ export default function WhenCome() {
                     <h5 className="text-xl lg:text-2xl text-white">Есть сайт и реклама, <br /> но заявок нет
                     </h5>
                     <div className="-mb-24 lg:-mb-14 flex items-end justify-center hover:scale-110 transition-all duration-700">
-                        <img className="w-full h-72 object-contain" src="/img/whencome/1.png" alt="" />
+                        <ExportedImage className="w-full h-72 object-contain pointer-events-none" width={288} height={288}  src="/img/whencome/1.png" alt="Static Image" />
+                        {/* <img className="w-full h-72 object-contain" src="/img/whencome/1.png" alt="" /> */}
                     </div>
                 </div>
                  <div className="bg-linear-to-br from-blue-400 to-blue-600 rounded-[20px] rounded-tr-[100px] flex flex-col justify-between overflow-hidden px-6 lg:px-12 pt-7 lg:pt-11 pb-0">
                     <h5 className="text-xl lg:text-2xl text-white">Подрядчиков много, <br /> результата не видно
                     </h5>
                     <div className="-mb-24 lg:-mb-14 flex items-end justify-center hover:scale-110 transition-all duration-700">
-                        <img className="w-full h-72 object-contain" src="/img/whencome/2.png" alt="" />
+                        <ExportedImage className="w-full h-72 object-contain pointer-events-none" width={288} height={288}  src="/img/whencome/2.png" alt="Static Image" />
                     </div>
                 </div>
                  <div className="bg-linear-to-br from-blue-400 to-blue-600 rounded-[20px] rounded-tr-[100px] flex flex-col justify-between overflow-hidden px-6 lg:px-12 pt-7 lg:pt-11 pb-0">
                     <h5 className="text-xl lg:text-2xl text-white">Нужен предсказуемый <br /> рост
                     </h5>
                     <div className="-mb-24 lg:-mb-14 flex items-end justify-center hover:scale-110 transition-all duration-700">
-                        <img className="w-full h-72 object-contain" src="/img/whencome/3.png" alt="" />
+                        <ExportedImage className="w-full h-72 object-contain pointer-events-none" width={288} height={288}  src="/img/whencome/3.png" alt="Static Image" />
                     </div>
                 </div>
             </div>

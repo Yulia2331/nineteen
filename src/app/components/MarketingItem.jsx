@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 export default function MarketingItem(props) {
  
    
@@ -11,7 +12,8 @@ export default function MarketingItem(props) {
         `} >
                     <h3 className="text-sm xs:text-lg sm:text-[26px] lg:text-2xl xl:text-3xl text-white uppercase font-semibold">{props.title}</h3>
                     <div className="w-3/4 m-auto -mb-7 flex items-end justify-center">
-                        <img src={props.src} alt=""  className="w-52 h-42 sm:w-62 sm:h-52 object-contain"/>
+                        {/* <img src={props.src} alt=""  className="w-52 h-42 sm:w-62 sm:h-52 object-contain"/> */}
+                        <ExportedImage className="w-52 h-42 sm:w-62 sm:h-52 object-contain" width={288} height={288}  src={props.src} alt="Static Image" />
                     </div>
                 </div>
                 <div className={`card-back h-full w-full aspect-square absolute left-0  top-0 z-20  transition-all duration-[.8s] rotate-y-180 opacity-0`}>

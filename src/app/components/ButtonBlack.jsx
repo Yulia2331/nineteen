@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 import ContactPop from "../components/ContactPop";
 export default function ButtonBlack(props) {
      const [isOpen, setOpen] = useState();
@@ -15,7 +16,7 @@ export default function ButtonBlack(props) {
  
         <span>{props.text}</span>
         
-       <img src="/img/icon/arr.svg" alt="" className="w-5 sm:w-auto"/>
+      <ExportedImage className="w-5 sm:w-auto" width={10} height={10}  src="/img/icon/arr.svg" alt="->" />
 
     </a>
 

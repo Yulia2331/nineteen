@@ -1,5 +1,6 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 import Image from "next/image";
 // import { Link, Element } from 'react-scroll'
 import Link from 'next/link'
@@ -13,8 +14,7 @@ export default function Header() {
 <div className="container">
     <div className="flex items-center justify-between">
         <a href="/" className="flex items-center">
-            <img src="/img/logo.svg" alt="" className="w-12 lg:w-20"/>
-           
+           <ExportedImage className="w-12 lg:w-20" width={82} height={62}  src="/img/logo.svg" alt="Static Image" />
             <div className="flex flex-col items-start leading-none font-medium tracking-tight ml-1 sm:ml-2">
                 <span className="text-[18px] sm:text-xl lg:text-2xl">Nineteen bees</span>
                 <span className="text-[11px] sm:text-[12px] lg:text-[14px]">Развитие бизнеса в сети</span>

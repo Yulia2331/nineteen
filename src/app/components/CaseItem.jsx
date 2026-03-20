@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link'
 import axios from "axios";
 export default  function CaseItem(props) {
@@ -36,6 +37,7 @@ for (var key in tags) {
     <Link href={props.link} className="relative h-[275px] max-w-[480px] md:max-w-none overflow-hidden rounded-4xl cursor-pointer">
       <div className="absolute w-full h-full overflow-hidden rounded-4xl">
         <img className="w-full h-full object-cover rounded-4xl" src={props.img} alt="" />
+        {/* <ExportedImage className="w-full h-full object-cover rounded-4xl" width={900} height={900}  src={props.img} alt="Static Image" /> */}
       </div>
         <div className="relative z-30 bg-[url('/img/cases-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 active:opacity-100 hover:opacity-100 transition-all duration-[.8s]">
          <div className="p-5 sm:p-8 lg:p-10 flex flex-col justify-between h-full">

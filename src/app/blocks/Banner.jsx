@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/Button";
+import ExportedImage from "next-image-export-optimizer";
 export default function Banner() {
   return (
     <div className="container ">  
@@ -28,7 +29,8 @@ export default function Banner() {
         </div>
     </div>
     <div className="md:max-w-5/12 flex flex-col items-center z-10 pt-5 md:pt-0">
-         <img className="w-full max-w-10/12 md:max-w-full" src="/img/banner.png" alt="" />
+         {/* <img className="w-full max-w-10/12 md:max-w-full" src="/img/banner.png" alt="" /> */}
+         <ExportedImage className="w-full max-w-10/12 md:max-w-full" width={3000} height={3000}  src="/img/banner.png" alt="bee" />
     </div>
 </div>
     <div className="mt-12">

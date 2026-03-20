@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import ButtonPop from "../components/ButtonPop";
 import ContactPop from "../components/ContactPop";
+import ExportedImage from "next-image-export-optimizer";
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 export default function AfterContacting() {
     const [isOpen, setOpen] = useState();
@@ -55,7 +56,10 @@ export default function AfterContacting() {
                     <li className="mb-4">приоритет гипотез <br /> на первые этап работы</li>
                     <li>единый план развития сайта и рекламы</li>
                 </ul>
-                <div className="absolute right-0 top-0 opacity-40 lg:opacity-100 lg:relative lg:-mb-32 w-full h-auto flex justify-end "><img  src="/img/freepik.png" alt="" className="lg:w-full h-96 object-contain"/></div>
+                <div className="absolute right-0 top-0 opacity-40 lg:opacity-100 lg:relative lg:-mb-32 w-full h-auto flex justify-end ">
+                    {/* <img  src="/img/freepik.png" alt="" className="lg:w-full h-96 object-contain"/> */}
+                    <ExportedImage className="lg:w-full h-96 object-contain" width={288} height={288}  src="/img/freepik.png" alt="Static Image" />
+                    </div>
                 
             </div>
       

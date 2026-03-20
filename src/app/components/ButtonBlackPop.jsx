@@ -1,5 +1,6 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 import ContactPop from "../components/ContactPop";
 import InputMask from 'react-input-mask';
 import axios from "axios";
@@ -32,7 +33,8 @@ export default function ButtonBlackPop(props) {
  
         <span>{props.text}</span>
         
-       <img src="/img/icon/arr.svg" alt="" className="w-5 sm:w-auto"/>
+       <ExportedImage className="w-5 sm:w-auto" width={10} height={10}  src="/img/icon/arr.svg" alt="->" />
+
 
     </button>
       {isOpen && (                 
