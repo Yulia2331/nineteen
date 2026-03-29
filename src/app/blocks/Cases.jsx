@@ -1,3 +1,4 @@
+'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import axios from "axios";
 import CaseItem from "../components/CaseItem";
@@ -19,7 +20,7 @@ const fetchPosts = () => {
   }, 
 [])
 
-console.log(posts)
+// console.log(posts)
      const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 

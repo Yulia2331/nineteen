@@ -110,7 +110,7 @@ const [vis3, setVis3] = useState(false);
                 <span className="text-5xl md:text-6xl lg:text-[64px] ">02/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
                     <h4 className="text-xl sm:text-2xl lg:text-[32px] uppercase font-semibold mb-1 tracking-[-1] ">Система под ключ</h4>
-                    <p className="text-lg xs:text-xl sm:text-2xl tracking-tight ">Оффер, сайт, реклама, аналитика. <br /> Все работает как единое целое.</p>
+                    <p className="text-lg xs:text-xl sm:text-2xl tracking-tight ">Оффер, сайт, реклама, аналитика <br /> Все работает как единое целое</p>
                 </div>
            </div>
              <div  className={`relative flex flex-col md:flex-row gap-3 justify-between md:items-center border-y-2  py-8 lg:pr-20 hover:text-darck hover:border-t-darck
@@ -119,12 +119,12 @@ const [vis3, setVis3] = useState(false);
                 <span className="text-5xl md:text-6xl lg:text-[64px] ">03/</span>
                 <div className="md:w-4/6 lg:w-1/2 lg:pr-20">
                     <h4 className="text-xl sm:text-2xl lg:text-[32px] uppercase font-semibold mb-1 tracking-[-1] ">Рост и масштабирование</h4>
-                    <p className="text-lg xs:text-xl sm:text-2xl tracking-tight ">Усиливаем то, что дает результат. <br /> Улучшаем на основе цифр.</p>
+                    <p className="text-lg xs:text-xl sm:text-2xl tracking-tight ">Усиливаем то, что дает результат <br /> Улучшаем на основе цифр</p>
                 </div>
            </div>
               <Parallax speed={-16}>
                   {/* <img src="/img/bee.png" alt="" className={`absolute -top-80 scale-60 -right-30 xs:-right-40 md:left-0 md:right-0 lg:scale-100 lg:left-24 pointer-events-none z-20`} /> */}
-                  <ExportedImage className="absolute -top-80 scale-60 xs:scale-80 -right-20 md:left-6 md:right-0 lg:scale-100 lg:left-24 pointer-events-none z-20" width={288} height={288}  src="/img/bee.png" alt="Static Image" unoptimized={true}/>
+                  <ExportedImage className="absolute -top-80 scale-60 xs:scale-80 -right-20 md:left-6 md:right-0 lg:scale-100 lg:left-24 pointer-events-none z-20" width={288} height={288}  src="/img/bee.png" alt="Static Image"/>
          </Parallax> 
         </div>
     </div>

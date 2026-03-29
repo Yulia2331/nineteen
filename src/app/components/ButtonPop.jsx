@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
+import ContactForm from "../components/ContactForm";
 export default function Button(props) {
     const [isOpen, setOpen] = useState();
   return ( 
@@ -9,7 +10,7 @@ export default function Button(props) {
     className={` 
  gradient-button
      inline-flex
-     items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] w-full whitespace-nowrap
+     items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-tight w-full whitespace-nowrap
      hover:shadow-lg hover:shadow-sh  transition-all duration-[.6s]
     `}>
         <span>{props.text}</span>
@@ -23,26 +24,9 @@ export default function Button(props) {
         <div className="pointer-events-none">
           <div className="bg-white rounded-4xl relative z-10 pointer-events-auto">
             <div className="p-5 -mb-3 cursor-pointer" onClick={() => setOpen(false)}> <img src="/img/icon/arr-black.svg" alt="" className='-rotate-180'/> </div>
-            <div className="bg-[url('/img/cases-item-bg.png')] bg-size-[150%_70%] bg-bottom bg-no-repeat p-8">
-                <h3 className="text-2xl sm:text-[32px] mb-5">Обсудить задачу</h3>
-                <span className="text-[16px] before:h-2 before:w-2 before:rounded-full before:bg-green flex items-center gap-2">Мы в онлайне:</span>
-                <div className="flex items-center gap-7 mt-3 mb-12">
-                  <a href="https://t.me/Allakoala9" className="flex items-center gap-1">
-                    <img src="/img/icon/tg.svg" alt="" />
-                    <span className="text-[16px]">Telegram</span>
-                  </a>
-                   <a href="https://max.ru/u/f9LHodD0cOL1TBKpIYV2yvfq7IPI0UFN4TRvrHlzh88Y3BU8ff3tQ3Sybic" className="flex items-center gap-1">
-                    <img src="/img/icon/max.svg" alt="" />
-                    <span className="text-[16px]">Max</span>
-                  </a>
-                </div>
-                <h4 className="text-lg sm:text-2xl">Оставьте номер телефона <br /> и мы вам перезвоним</h4>
-                <form action="" className="mt-5">
-                  <label htmlFor="" className="text-[16px] block mb-3">Телефон</label>
-                  <input type="text" className="text-[16px] bg-white rounded-[10px] w-full p-4 outline-darck-op"/>
-                  <button className="cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] text-white p-4 whitespace-nowrap w-full mt-12">Отправить</button>
-                </form>
-            </div>
+            
+                <ContactForm></ContactForm>
+            
           </div>
           </div>
        </div>

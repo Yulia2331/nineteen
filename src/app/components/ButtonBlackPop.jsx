@@ -1,29 +1,15 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
-import ContactPop from "../components/ContactPop";
-import InputMask from 'react-input-mask';
+import ContactForm from "../components/ContactForm";
 import axios from "axios";
-
-// function PhoneInput() {
-//   return (
-//     <InputMask 
-//       mask="+7 (999) 999-99-99" 
-//       maskChar="_" 
-//       placeholder="+7 (___) ___-__-__"
-//     >
-//       {(inputProps) => <input {...inputProps} type="text" />}
-//     </InputMask>
-//   );
-// }
-
 export default function ButtonBlackPop(props) {
      const [isOpen, setOpen] = useState();
   return (  
 <div className={`${props.class}`}>
        <button onClick={() => setOpen(true)}
     className={` 
-    cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] text-white px-6 py-3 whitespace-nowrap 
+    cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-tight text-white px-6 py-3 whitespace-nowrap 
     hover:bg-linear-to-r hover:contrast-150 active:bg-linear-to-r active:contrast-150
     hover:from-text-grad-2 hover:from-41.24% active:from-text-grad-2 active:from-41.24%
     hover:to-text-grad-3 hover:to-84.31% active:to-text-grad-3 active:to-84.31%
@@ -43,26 +29,7 @@ export default function ButtonBlackPop(props) {
         <div className="pointer-events-none">
           <div className="bg-white rounded-4xl relative z-10 pointer-events-auto">
             <div className="p-5 -mb-3 cursor-pointer" onClick={() => setOpen(false)}> <img src="/img/icon/arr-black.svg" alt="" className='-rotate-180'/> </div>
-            <div className="bg-[url('/img/cases-item-bg.png')] bg-size-[150%_70%] bg-bottom bg-no-repeat p-8">
-                <h3 className="text-2xl sm:text-[32px] mb-5">Обсудить задачу</h3>
-                <span className="text-[16px] before:h-2 before:w-2 before:rounded-full before:bg-green flex items-center gap-2">Мы в онлайне:</span>
-                <div className="flex items-center gap-7 mt-3 mb-12">
-                  <a href="https://t.me/Allakoala9" className="flex items-center gap-1">
-                    <img src="/img/icon/tg.svg" alt="" />
-                    <span className="text-[16px]">Telegram</span>
-                  </a>
-                   <a href="https://max.ru/u/f9LHodD0cOL1TBKpIYV2yvfq7IPI0UFN4TRvrHlzh88Y3BU8ff3tQ3Sybic" className="flex items-center gap-1">
-                    <img src="/img/icon/max.svg" alt="" />
-                    <span className="text-[16px]">Max</span>
-                  </a>
-                </div>
-                <h4 className="text-lg sm:text-2xl">Оставьте номер телефона <br /> и мы вам перезвоним</h4>
-                <form action="" className="mt-5">
-                  <label htmlFor="" className="text-[16px] block mb-3">Телефон</label>
-                  <input type="text" className="text-[16px] bg-white rounded-[10px] w-full p-4 outline-darck-op"/>
-                  <button className="cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] text-white p-4 whitespace-nowrap w-full mt-12">Отправить</button>
-                </form>
-            </div>
+              <ContactForm></ContactForm>
           </div>
           </div>
        </div>

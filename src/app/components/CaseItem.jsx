@@ -1,3 +1,4 @@
+'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link'
@@ -21,7 +22,7 @@ const itemTags = props.tag;
 
 const tagArr = []
 for (var key in tags) {
-  console.log(tags[key]);
+  // console.log(tags[key]);
   const h = tags[key];
   const b = h.id;
 

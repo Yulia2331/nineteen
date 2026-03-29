@@ -134,9 +134,9 @@ return(
       </div>
     </div>
     <div className="container">
-      <div className="grid lg:grid-cols-2 md:gap-10  overflow-hidden">
-      <div className="">
-        <div className="text-xl flex flex-col gap-1.5" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
+      <div className="grid lg:grid-cols-2 md:gap-10 pb-12  overflow-hidden">
+      <div className="px-5 md:px-0 md:pl-5">
+        <div className="text-xl flex flex-col gap-1.5 text-content" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
         <div  className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
           <span className="text-[28px] md:text-[32px]">Что сделано:</span>
           <div className="mt-8 md:mt-12 grid sm:grid-cols-2 gap-5">

@@ -21,6 +21,7 @@
   --color-darck-op: rgba(36, 36, 36, .2);
   --color-darck-op-30: rgba(36, 36, 36, .3);
   --color-white-op-30: rgba(255, 255, 255, .3);
+  --color-white-op-70: rgba(255, 255, 255, .7);
   --color-blue-400: #1DC1F8;
   --color-blue-600: #477BEA;
   --color-text-grad-1: #44CF98;
@@ -86,16 +87,22 @@
       src: url(fonts/montserrat/Montserrat-Medium.ttf) format('ttf');
     } */
   @font-face {
-      font-family: 'cy';
+      font-family: 'Google Sans';
       font-style: normal;
       font-weight: 400;
-      src: url(fonts/cygrotesk/cygrotesk-keyregular.woff) format('woff');
+      src: url(fonts/Google_Sans/static/GoogleSans-Regular.ttf) format('ttf');
     }
   @font-face {
-      font-family: 'cy';
+      font-family: 'Google Sans';
       font-style: normal;
-      font-weight: 500;
-      src: url(fonts/cygrotesk/cy-grotesk-key-3.woff) format('woff');
+      font-weight: semibold;
+      src: url(fonts/Google_Sans/static/GoogleSans-SemiBold.ttf) format('ttf');
+    }
+      @font-face {
+      font-family: 'Google Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url(fonts/Google_Sans/static/GoogleSans-Bold.ttf) format('ttf');
     }
 }
 /* @media (prefers-color-scheme: dark) {
@@ -109,6 +116,8 @@ body {
   background: var(--background);
   color: #242424;
   font-family: 'Google Sans', sans-serif;
+  font-weight: 400;
+  /* font-family: 'Google_Sans', sans-serif; */
 }
 h2{
   line-height: 120%;
@@ -254,3 +263,23 @@ h2{
   transform: rotate(-180deg);
   left: 40px;
 } */
+
+.text-content a{
+  color:#a600b5;
+  text-decoration: underline;
+}
+.text-content a:hover{
+  color:#e12afb;
+}
+.text-content ol{
+  list-style-type: decimal;
+  padding-left: 18px;
+}
+.text-content table{
+  border-collapse: collapse; 
+}
+.text-content th, .text-content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}

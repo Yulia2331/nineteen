@@ -30,7 +30,7 @@ export default function Banner() {
                 <span>от упаковки идеи и креативов <br /> до запуска рекламы</span>
             </div>
         <div className=" flex flex-col items-center justify-center relative z-30">
-                <ButtonBlack link="https://t.me/Allakoala9" text="Запустить рекламу под ключ" class="w-full md:w-auto lg:w-1/2 mb-3"></ButtonBlack>
+                <ButtonBlack link="https://t.me/nineteen_bees" text="Запустить рекламу под ключ" class="w-full md:w-auto lg:w-1/2 mb-3"></ButtonBlack>
                 <span className="text-sm md:text-[16px]">ответим в течение 60 минут</span>
             </div>
         </div>

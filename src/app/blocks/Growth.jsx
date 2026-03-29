@@ -26,9 +26,7 @@ export default function Growth() {
                         <ShadowDot></ShadowDot>
                         <span className="text-lg sm:text-xl md:text-3xl text-white">Разберём текущий маркетинг <br /> и покажем точки масштабирования</span>
                     </div>
-                    {/* <div className="" onClick={() => setOpen(true)}>
-                        <ButtonBlack  link="#" text="Запланировать стратегическую сессию" class="mt-14"/>
-                    </div> */}
+                   
 
 <ButtonBlackPop  text="Запланировать стратегическую сессию" class="mt-14"/>
                 </div>

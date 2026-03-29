@@ -4,13 +4,13 @@ import ExportedImage from "next-image-export-optimizer";
 export default function Banner() {
   return (
     <div className="container ">  
-    <div id="about" className="absolute top-0 left-0 w-full  rotate-90 lg:rotate-0 scale-400 md:scale-200 lg:scale-100 flex items-end justify-start
+    <div id="about" className="absolute top-0 left-0 w-full  rotate-90 lg:rotate-0 scale-400 md:scale-200 lg:scale-100 flex items-end justify-start pointer-events-none
      lg:after:bg-white after:z-20  lg:after:w-72  lg:after:translate-x-30
       after:absolute lg:after:-bottom-10 after:rotate-90 lg:after:rotate-0  lg:after:left-0 after:scale-120
      lg:after:min-w-full after:bg-white after:bottom-0 
      after:left-6/12 after:flex after:w-full after:h-22 after:justify-center after:blur-lg -mt-32 lg:mt-0
     ">
-                <video autoPlay loop muted className="w-full scale-101 block">
+                <video autoPlay loop muted preload="none" className="w-full scale-101 block">
                    <source src="/img/6.mp4" type="video/mp4" />
                  </video> 
                  </div>
@@ -28,13 +28,13 @@ export default function Banner() {
             <span className="text-sm md:text-[16px] lg:text-2xl py-2 px-3 lg:px-5 border-2 border-darck-op rounded-4xl">B2B и услуги</span>
         </div>
     </div>
-    <div className="md:max-w-5/12 flex flex-col items-center z-10 pt-5 md:pt-0">
+    <div className="md:max-w-5/12 flex flex-col items-center z-10 pt-5 md:pt-0 pointer-events-none">
          {/* <img className="w-full max-w-10/12 md:max-w-full" src="/img/banner.png" alt="" /> */}
-         <ExportedImage className="w-full max-w-10/12 md:max-w-full" width={3000} height={3000}  src="/img/banner.png" alt="bee" />
+         <ExportedImage className="w-full max-w-10/12 md:max-w-full " width={3000} height={3000}  src="/img/banner.png" alt="bee" />
     </div>
 </div>
     <div className="mt-12">
-        <Button link="https://t.me/Allakoala9" text="Обсудить вашу задачу" class="w-full md:w-auto lg:w-1/2"></Button>
+        <Button link="https://t.me/nineteen_bees" text="Обсудить вашу задачу" class="w-full md:w-auto lg:w-1/2"></Button>
     </div>
     </div>
     );

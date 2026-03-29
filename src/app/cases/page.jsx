@@ -8,7 +8,14 @@ import Button from "../components/Button";
 import CaseCategories from "../components/CaseCategories";
 import Footer from "../blocks/Footer";
 import axios from "axios";
+import { Metadata } from 'next';
+// export async function generateMetadata() {;
 
+//   return {
+//     title: 'Кейсы',
+//     description: "Наши кейсы",
+//   };
+// }
 function СasesPage() {
   let p = '';
   const searchParams = useSearchParams()

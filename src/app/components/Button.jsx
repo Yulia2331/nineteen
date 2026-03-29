@@ -8,7 +8,7 @@ export default function Button(props) {
     className={`${props.class} 
  gradient-button
      inline-flex
-     items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] w-full whitespace-nowrap
+     items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-tight w-full whitespace-nowrap
      hover:shadow-lg hover:shadow-sh  transition-all duration-[.6s]
     `}>
         <span>{props.text}</span>

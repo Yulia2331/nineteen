@@ -1,6 +1,46 @@
-import Image from "next/image";
+'use client';
+import React, { useCallback, useEffect, useState, useRef } from 'react'
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Footer() {
+     const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Показываем кнопку после прокрутки на 300px
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Плавная прокрутка
+    });
+  };
+  const [op, setOp] = useState('opacity-0');
+   const onScroll = useCallback(event => {
+                  const { pageYOffset, scrollY } = window;
+                  if(scrollY > 1600 || pageYOffset > 1600){
+                    setOp('opacity-100')
+                          }
+              }, []);
+            
+              useEffect(() => {
+                //add eventlistener to window
+                window.addEventListener("scroll", onScroll, { passive: true });
+                // remove event on unmount to prevent a memory leak with the cleanup
+                return () => {
+                   window.removeEventListener("scroll", onScroll, { passive: true });
+                }
+              }, []);
   return (
 <footer className="w-full pt-20 pb-10 bg-[url('/img/footer.png')] bg-size-[100%_100%] bg-top bg-no-repeat relative z-10">
 <div className="container">
@@ -40,20 +80,20 @@ export default function Footer() {
           <div className="">
             <h5 className="text-sm sm:text-[16px] text-white font-bold mb-4">Документы</h5>
             <ul>
-                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="">Политика конфиденциальности</a></li>
-                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="">Cookies</a></li>
+                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="/docs/privacy-policy">Политика конфиденциальности</a></li>
+                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="/docs/cookies">Cookies</a></li>
                 <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="">Пользовательское соглашение</a></li>
-                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="">Согласие на обработку данных</a></li>
+                <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="/docs/soglasie-polzovatelya-na-obrabotku-personalnyh-dannyh">Согласие на обработку данных</a></li>
                 <li className="mb-2 text-sm sm:text-[16px] text-white"><a href="">Обработка данных (DPA)</a></li>
             </ul> 
         </div>
           <div className="">
             <h5 className="text-sm sm:text-[16px] text-white font-bold mb-4">Контакты</h5>
             <ul>
-                <li className="mb-2 text-sm sm:text-[16px] text-white"><a  href="mailto:agency@19bees.com">Email: agency@19bees.com</a></li>
+                <li className="mb-2 text-sm sm:text-[16px] text-white"><a  href="mailto:agency@19bees.ru">Email: agency@19bees.ru</a></li>
                 <li className="mb-2 text-sm sm:text-[16px] text-white"><a  href="tel:89174351919">Телефон: +7 (917) 435-19-19</a></li>
                 {/* <li className="mb-2 text-sm sm:text-[16px] text-white">Адрес: Город, улица, дом</li> */}
-                <li className="mb-2 text-sm sm:text-[16px] text-white flex gap-5"><a  href="https://t.me/Allakoala9" target="_blank">Telegram</a><a  href="https://vk.com/19bees" target="_blank">VK</a></li>
+                <li className="mb-2 text-sm sm:text-[16px] text-white flex gap-5"><a  href="https://t.me/nineteen_bees" target="_blank">Telegram</a><a  href="https://vk.com/19bees" target="_blank">VK</a></li>
                 <li className="mb-2 text-sm sm:text-[16px] text-white flex gap-5"><a href="https://wa.me/37259002425" target="_blank">WhatsApp</a><a href="https://max.ru/u/f9LHodD0cOL1TBKpIYV2yvfq7IPI0UFN4TRvrHlzh88Y3BU8ff3tQ3Sybic" target="_blank">Max</a></li>
                 <li className="mb-2 text-sm sm:text-[16px] text-white flex"><a href="https://www.youtube.com/@19Bees" target="_blank">YouTube</a></li>
             </ul> 
@@ -65,6 +105,8 @@ export default function Footer() {
         <span className="text-white-op-30 text-sm sm:text-[16px]">Сделано командой 19BEES</span>
     </div>
 </div>
+<button onClick={scrollToTop} className={` z-110 fixed bottom-16 sm:bottom-20 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>
+    <ExportedImage className="w-5 sm:w-auto -rotate-90" width={40} height={40}  src="/img/icon/arr.svg" alt="->" /></button>
 </footer>
     );
 }
