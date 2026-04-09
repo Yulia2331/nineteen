@@ -105,7 +105,7 @@ export default function Footer() {
         <span className="text-white-op-30 text-sm sm:text-[16px]">Сделано командой 19BEES</span>
     </div>
 </div>
-<button onClick={scrollToTop} className={` z-110 fixed bottom-16 sm:bottom-20 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>
+<button onClick={scrollToTop} className={` z-110 fixed bottom-24 sm:bottom-28 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>
     <ExportedImage className="w-5 sm:w-auto -rotate-90" width={40} height={40}  src="/img/icon/arr.svg" alt="->" /></button>
 </footer>
     );

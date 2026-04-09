@@ -1,3 +1,4 @@
+'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
 import ContactPop from "../components/ContactPop";

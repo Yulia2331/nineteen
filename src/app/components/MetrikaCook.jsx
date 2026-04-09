@@ -47,7 +47,7 @@ export default function CookieConsent() {
     useEffect(() => {
       const params = searchParams.toString();
       const url = base + pathName + (params && "?" + params);
-      console.log(url);
+      // console.log(url);
    if(consent){
       ym(108091925, "hit", url);
    }

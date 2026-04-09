@@ -106,7 +106,7 @@ export default function Home() {
        
        
         <div className="container relative">
-          <div className={`fixed bottom-3 right-1 md:right-3 z-100 transition-all duration-[.8s] ${op}`}>
+          <div className={`fixed bottom-12 right-1 md:right-3 z-100 transition-all duration-[.8s] ${op}`}>
                   <ButtonBlack link="https://t.me/nineteen_bees" text="Начать проект" class="w-52 sm:w-72"/>
           </div>
         </div>

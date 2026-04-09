@@ -1,6 +1,7 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation';
+import Link from 'next/link'
 import axios from "axios";
 
 function CaseCategoriesP() {

@@ -1,16 +1,25 @@
-'use client'
-import React, { useCallback, useEffect, useState, useRef } from 'react'
-import Header from "../blocks/Header";
-import Footer from "../blocks/Footer";
-import ContactForm from "../components/ContactForm";
-export default function Blog() {
+
+import BlogPage  from "../pages/BlogPage";
+
+// export async function generateMetadata() {;
+//   const res = await fetch("https://back.19bees.ru//wp-json/yoast/v1/get_head?url=https://back.19bees.ru/cases/");
+//    let meta = await res.json();
+//    meta = meta.json;
+//   console.log(meta.schema);
+//   return {
+//     title: `${meta.title}`,
+//     description: `${meta.description}`,
+//   //    schema: {
+
+//   // }
+//     // title: 'Кейсы',
+//     // description: "Наши кейсы",
+//   };
+// }
+
+export default  function Page() {
+ 
   return (
-    <div className="min-h-screen justify-center w-full overflow-hidden relative">   
-          <Header></Header> 
-          <div className="container">
-            
-          </div>
-        <Footer></Footer>
-    </div>
-  );
+    <BlogPage></BlogPage>
+  )
 }

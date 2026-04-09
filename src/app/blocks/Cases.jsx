@@ -53,7 +53,7 @@ const fetchPosts = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-y-4 lg:gap-y-2 gap-x-2 lg:gap-x-5 justify-center">
              {posts.map((n, i) => ( 
-                       <CaseItem key={i} link={`/cases/case/?${n.slug}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
+                       <CaseItem key={i} link={`/cases/${n.slug}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} tag={n.cases_tag}/>
                     ))
                        }
 
