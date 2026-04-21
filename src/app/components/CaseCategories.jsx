@@ -26,12 +26,12 @@ if (!posts || posts.length === 0) return <div className=""></div>
 return (
       <div className="flex flex-wrap gap-2 mb-10">
         <a href='?'  className={`
-           text-lg sm:text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-none hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer ${active == null ? 'border-none bg-linear-to-r from-blue-400 to-blue-600 text-white' : ''}
+           text-lg sm:text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-none hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer ${active == null ? 'border-transparent bg-linear-to-r from-blue-400 to-blue-600 text-white' : ''}
            `}>Все работы</a>
  {posts.map((n, i) => ( 
           n.count != 0 && ( 
            <a href={`?id=${n.id}`} key={i} className={`
-           text-lg sm:text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-none hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer ${active == n.id ? 'border-none bg-linear-to-r from-blue-400 to-blue-600 text-white' : ''}
+           text-lg sm:text-2xl py-2 px-6 border-2 border-darck-op rounded-4xl hover:border-none hover:bg-linear-to-r hover:from-blue-400 hover:to-blue-600 hover:text-white cursor-pointer ${active == n.id ? 'border-transparent bg-linear-to-r from-blue-400 to-blue-600 text-white' : ''}
            `}>{n.name}</a>
         ))
       )

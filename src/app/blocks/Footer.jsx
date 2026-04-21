@@ -1,6 +1,7 @@
 'use client';
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
+import ButtonBlack from "../components/ButtonBlack";
 
 export default function Footer() {
      const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +43,8 @@ export default function Footer() {
                 }
               }, []);
   return (
-<footer className="w-full pt-20 pb-10 bg-[url('/img/footer.png')] bg-size-[100%_100%] bg-top bg-no-repeat relative z-10">
+    <div className="">
+<footer className="w-full py-20 pb-24 bg-[url('/img/footer.png')] bg-size-[100%_100%] bg-top bg-no-repeat relative">
 <div className="container">
     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-14">
         {/* <div className="">
@@ -105,8 +107,16 @@ export default function Footer() {
         <span className="text-white-op-30 text-sm sm:text-[16px]">Сделано командой 19BEES</span>
     </div>
 </div>
-<button onClick={scrollToTop} className={` z-110 fixed bottom-24 sm:bottom-28 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>
-    <ExportedImage className="w-5 sm:w-auto -rotate-90" width={40} height={40}  src="/img/icon/arr.svg" alt="->" /></button>
+
 </footer>
+        <div className="fixed bottom-3 w-full flex justify-end pr-1 md:pr-2  z-30">
+          <div className={`  transition-all duration-[.8s] ${op}`}>
+                  <ButtonBlack link="https://t.me/nineteen_bees" text="Начать проект" class="w-52 sm:w-72"/>
+          </div>
+        </div>
+<button onClick={scrollToTop} className={` z-30 fixed bottom-16 sm:bottom-20 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>
+    <ExportedImage className="w-5 sm:w-auto -rotate-90" width={40} height={40}  src="/img/icon/arr.svg" alt="->" /></button>
+
+</div>
     );
 }

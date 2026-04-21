@@ -42,14 +42,14 @@ const [page, setPage] = useState(6)
     more()
   }, 
 [])
-// console.log(posts)
+console.log(posts)
 if (!posts || posts.length === 0) return <div className="h-full w-full flex justify-center items-center"><div className="animate-spin h-20 w-20 rounded-full bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% flex justify-center items-center "><div className="h-10 w-10 bg-white rounded-full"></div></div></div>
   return (
     <div className="">       
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {posts.map((n, i) => ( 
           
-          <CaseItemCat key={i} link={`/cases/${n.slug}`} title={n.title.rendered} img={n.cases_prew} descr={n.cases_shortdescr} />
+          <CaseItemCat key={i} link={`/cases/${n.slug}`} title={n.title.rendered} img={n.cases_prew} vid={n.cases_vid_prew} descr={n.cases_shortdescr} />
         ))
            }
        </div>

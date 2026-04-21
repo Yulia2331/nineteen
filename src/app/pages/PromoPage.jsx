@@ -14,6 +14,7 @@ import Cases from "../blocks/Cases";
 import Star from "../blocks/promo/Star";
 import Direct from "../blocks/promo/Direct";
 import Sale from "../blocks/promo/Sale";
+import SaleNow from "../blocks/promo/SaleNow";
 import { Link, Element } from 'react-scroll';
 // import SmCard from "../components/SmCard";
 export default function PromoPage() {
@@ -44,10 +45,10 @@ export default function PromoPage() {
     <div className="h-full w-full relative ">
       {/* <img src="/img/promo/line-center-2.png" alt="" className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block"/>
      <img src="/img/promo/line-center2-mob.png" alt="" className="z-10 absolute left-0 md:left-3 h-full -top-46 sm:hidden"/> */}
-     <ExportedImage className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block" width={408} height={720}  src="/img/promo/line-center-2.png" alt="Static Image" />
+     {/* <ExportedImage className="-z-10 absolute left-0 md:left-3 h-1/2 top-72 hidden sm:block" width={408} height={720}  src="/img/promo/line-center-2.png" alt="Static Image" /> */}
      <ExportedImage className="z-10 absolute left-0 md:left-3 h-full -top-46 sm:hidden" width={383} height={2420}  src="/img/promo/line-center2-mob.png" alt="Static Image" />
      <Rate></Rate>
-      <Sale></Sale>
+      <SaleNow></SaleNow>
       
 
     </div>

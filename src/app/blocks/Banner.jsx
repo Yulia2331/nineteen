@@ -10,16 +10,16 @@ export default function Banner() {
      lg:after:min-w-full after:bg-white after:bottom-0 
      after:left-6/12 after:flex after:w-full after:h-22 after:justify-center after:blur-lg -mt-32 lg:mt-0
     ">
-                <video autoPlay loop muted preload="none" className="w-full scale-101 block">
+                <video autoPlay loop muted playsInline preload="none" className="w-full scale-101 block">
                    <source src="/img/6.mp4" type="video/mp4" />
                  </video> 
                  </div>
 <div className="flex-col md:flex-row flex justify-between md:items-center relative mt-14">
     <div className="lg:flex-1 relative z-20">
     <h1 className="text-4xl xs:text-5xl sm:text-[68px] md:text-[56px] lg:text-[68px] xl:text-[86px] leading-none tracking-tight font-bold uppercase">
-        <span className="block">Рост бизнеса</span>
-        <span className="block">начинается</span>
-        <span>с <span className="bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31%">решения</span></span>
+        <span className="block">Рост бизнеса </span>
+        <span className="block">начинается </span>
+        <span>с <span className="bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31%"> решения</span></span>
         </h1>
         <p className="text-sm xs:text-lg sm:text-xl lg:text-2xl pt-5 mb-8">Строим систему привлечения клиентов <br /> через сайт, соцсети, рекламу и аналитику</p>
         <div className="flex-row inline-flex gap-2 flex-wrap">

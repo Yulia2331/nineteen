@@ -90,11 +90,11 @@ export default function CookieConsent() {
     </div>
         </div>
       )}
-      {isOpen && (
+      {/* {isOpen && (
         <div onClick={() => setIsOpen(false)} className="fixed bottom-0 left-0 z-100 cursor-pointer p-2 backdrop-blur-2xl bg-white-op-70 rounded-lg">
           <p>Политика обработки персональных данных</p>
         </div>
-        )}
+        )} */}
     </>
   );
 }

@@ -37,7 +37,14 @@ for (var key in tags) {
   return (
     <Link href={props.link} className="relative h-[275px] max-w-[480px] md:max-w-none overflow-hidden rounded-4xl cursor-pointer">
       <div className="absolute w-full h-full overflow-hidden rounded-4xl">
+        {!props.vid && (
         <img className="w-full h-full object-cover rounded-4xl" src={props.img} alt="" />
+         )}
+        {props.vid && (
+                 <video autoPlay loop muted playsInline preload="none" className="w-full h-80 bg-black">
+                   <source src={props.vid} type="video/mp4" />
+                 </video> 
+                 )} 
         {/* <ExportedImage className="w-full h-full object-cover rounded-4xl" width={900} height={900}  src={props.img} alt="Static Image" /> */}
       </div>
         <div className="relative z-30 bg-[url('/img/cases-bg.png')] bg-cover bg-top bg-no-repeat  w-full h-full opacity-0 active:opacity-100 hover:opacity-100 transition-all duration-[.8s]">

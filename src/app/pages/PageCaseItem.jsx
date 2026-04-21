@@ -91,7 +91,7 @@ return(
       )}
       <Header></Header>
       <div className="mb-20">
-        <div className="flex items-center justify-between fixed w-full top-10/12 md:top-5/12 xl:px-10 z-30 pointer-events-none">
+        <div className="flex items-center justify-between fixed w-full top-8/12 md:top-5/12 xl:px-10 z-30 pointer-events-none">
           <a href={`/cases/${post.prev_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 rotate-180 pointer-events-none'/></a>
           <a href={`/cases/${post.next_post_id}`} className="h-12 w-12 xl:h-16 xl:w-16 bg-darck rounded-full flex items-center justify-center pointer-events-auto"><img src="/img/icon/arr.svg" alt="" className='xl:w-10 pointer-events-none'/></a>
         </div>
@@ -111,7 +111,7 @@ return(
     <div className="container">
         <div className="grid lg:grid-cols-2 md:gap-10 pb-12  overflow-hidden">
             <div className="px-5 md:px-0 md:pl-5">
-                <div className="text-xl flex flex-col gap-1.5 text-content" dangerouslySetInnerHTML={{__html: post.content}}></div>
+                <div className="text-xl flex flex-col gap-4 text-content" dangerouslySetInnerHTML={{__html: post.content}}></div>
                 <div  className="mt-12 bg-[url('/img/cases-item-bg.png')] bg-size-[112%_100%] bg-center bg-no-repeat">
                           <span className="text-[28px] md:text-[32px]">Что сделано:</span>
                           <div className="mt-8 md:mt-12 grid sm:grid-cols-2 gap-5">
@@ -125,7 +125,7 @@ return(
             </div>
             <div className="relative mt-10 lg:mt-0 overflow-hidden">
         {/* <img className="w-full" src={post.cases_mainimg} alt="" /> */}
-
+{!post.vid && (
          <Slider ref={sliderm} {...settingsm} className=''>
             {post.image.map((n, i) => ( 
               <div key={i} className="overflow-hidden px-2">
@@ -134,7 +134,13 @@ return(
                     ))
                   }
             </Slider>
-
+)}
+{post.vid && (
+                 <video autoPlay loop muted playsInline preload="none" className="w-full ">
+                   <source src={post.vid} type="video/mp4" />
+                 </video> 
+                 )} 
+                 {!post.vid && (
               <div className="w-full flex justify-center">
             <div className={`lg:fixed lg:bottom-5 h-10 w-38 md:h-16 md:w-60  border-2 bg-white border-[#1DC1F8] rounded-4xl  items-center justify-between p-4 flex  `}>
               <button onClick={() => sliderm?.current?.slickPrev()} className="cursor-pointer -rotate-180 "><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
@@ -142,7 +148,10 @@ return(
               <button onClick={() => sliderm?.current?.slickNext()} className="cursor-pointer"><img src="/img/icon/arr-black.svg" alt="" className='w-6 md:w-9 pointer-events-none'/></button>
             </div>
             </div>
+             )}
+            {!post.vid && (
         <img onClick={() => setOpen(true)} className="w-10 md:w-16 absolute top-4 right-4 md:top-8 md:right-8 cursor-pointer" src="/img/icon/pop-trig.svg" alt="" />
+        )}
       </div>
         </div>
     </div>

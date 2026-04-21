@@ -49,7 +49,7 @@ export default function Marketing() {
                  <MarketingItem title="Продвижение" src="/img/marketing/4.png" text="Запускаем и ведем продвижение с фокусом на заявки и стоимость лида" class="md:rounded-bl-[100px] lg:rounded-bl-[20px] lg:rounded-tr-[100px]"/>
                  <div className="absolute flex flex-col items-start justify-center order-7 lg:order-5 translate-y-28 sm:translate-y-40 lg:translate-y-0 mb-4 px-4 max-w-11/12 lg:max-w-6/12 xl:max-w-5/12 w-full">
                   <span className="text-sm sm:text-2xl mb-2 sm:mb-4 block text-center w-full lg:pr-10">Хотите запустить продвижение бизнеса?</span>
-                  <ButtonBlack link="https://t.me/Allakoala9" text="Записаться на бесплатную консультацию" class="px-8 w-full xl:w-11/12"/>
+                  <ButtonBlack link="https://t.me/Allakoala9" text="Записаться на бесплатную консультацию" class="px-8 w-full xl:w-[580px]"/>
                  </div>
                  <div className="hidden lg:block"></div><div className="hidden lg:block"></div>
                  <MarketingItem title="Аналитика" src="/img/marketing/5.png" text="Видим, что приносит заявки и как их можно увеличить" class="lg:rounded-bl-[100px]" order="lg:order-6"/>

@@ -12,13 +12,14 @@ const geistMontserrat = Montserrat({
 });
 
 export const metadata = {
-   title: "Nineteen bees",
+   title: "Nineteen Bees",
   description: "Развитие бизнеса в сети",
 };
 export default function RootLayout({ children }) {
   return (
     <html className="scroll-smooth" lang="ru">
       <head>
+        <link rel="icon" href="https://19bees.ru/favicon.ico" type="image/x-icon"></link>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet"></link>
     <meta name="yandex-verification" content="0fba6f8db94a0183" />
 

@@ -8,12 +8,13 @@ export async function generateStaticParams() {
   // Fetch data from your CMS, database, or API
   // const posts = [{id: 1}]
 const res = await fetch("https://back.19bees.ru/wp-json/wp/v2/cases?per_page=100", {
-    cache: "no-store",
+    // cache: "no-store",
     fallback: true,
   });
   let posts = await res.json()
   return posts.map((post) => ({
-    slug: post.slug
+    slug: post.slug,
+    revalidate: 60,
   }));
 }
 
@@ -62,6 +63,7 @@ export default async function Page({ params }) {
     content = {post.content.rendered}
     card = {post.cases_cards}
     image = {post.cases_popup}
+    vid={post.cases_vid_prew}
     />  
   )
 }

@@ -18,7 +18,7 @@ export default function Header() {
         <a href="/" className="flex items-center">
            <ExportedImage className="w-12 lg:w-20" width={82} height={62}  src="/img/logo.svg" alt="Static Image" />
             <div className="flex flex-col items-start leading-none font-medium tracking-tight ml-1 sm:ml-2">
-                <span className="text-[18px] sm:text-xl lg:text-2xl">Nineteen bees</span>
+                <span className="text-[18px] sm:text-xl lg:text-2xl">Nineteen Bees</span>
                 <span className="text-[11px] sm:text-[12px] lg:text-[14px]">Развитие бизнеса в сети</span>
             </div>
         </a>
@@ -26,12 +26,12 @@ export default function Header() {
             {/* <li className="cursor-pointer"><Link href="/#marketing" >Услуги</Link></li> */}
             <li className="cursor-pointer"><Link href="/cases">Кейсы</Link></li>
             <li className="cursor-pointer"><Link href="/">О компании</Link></li>
-            <li className="cursor-pointer"><span onClick={() => setOpenPop(true)}>Связаться</span></li>
+            <li className="cursor-pointer"><Link href="/promo">Быстрый старт</Link></li>
         </ul>
         <div className="flex items-center gap-1 sm:gap-4">
-        <a href="/promo" className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3
-        before:bg-linear-to-bl before:from-text-grad-1 before:from-5.56% before:via-text-grad-2 before:via-41.24% before:to-text-grad-3 before:to-84.31%  before:absolute before:left-0 before:top-0  relative before:h-full before:w-full before:animate-pulse  overflow-hidden before:contrast-120 hidden xs:flex">
-            <span className="block z-20 relative">Быстрый старт</span></a>
+        <span onClick={() => setOpenPop(true)} className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3
+        before:bg-linear-to-bl before:from-text-grad-1 before:from-5.56% before:via-text-grad-2 before:via-41.24% before:to-text-grad-3 before:to-84.31%  before:absolute before:left-0 before:top-0  relative before:h-full before:w-full before:animate-pulse  overflow-hidden before:contrast-120 hidden xs:flex cursor-pointer">
+            <span className="block z-20 relative">Связаться</span></span>
             <a className="sm:hidden" href="tel:89174351919" target="_blank"><img src="/img/icon/phone.svg" alt="" /></a>
         <div className="sm:flex items-center gap-5 hidden">
             <div className="flex md:gap-1 ">
@@ -59,11 +59,11 @@ export default function Header() {
             {/* <li className="cursor-pointer"><Link href="/#marketing" >Услуги</Link></li> */}
             <li className="cursor-pointer"><Link href="/cases">Кейсы</Link></li>
             <li className="cursor-pointer"><Link href="/">О компании</Link></li>
-            <li className="cursor-pointer"><span onClick={() => setOpenPop(true)}>Связаться</span></li>
+            <li className="cursor-pointer"><Link href="/promo">Быстрый старт</Link></li>
     </ul>
-    <a href="/promo" className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3 text-center max-w-60
+    <span onClick={() => setOpenPop(true)} className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3 text-center max-w-60
         before:bg-linear-to-bl before:from-text-grad-1 before:from-5.56% before:via-text-grad-2 before:via-41.24% before:to-text-grad-3 before:to-84.31%  before:absolute before:left-0 before:top-0 relative  before:h-full before:w-full before:animate-pulse  overflow-hidden before:contrast-120 ">
-        <span className="block z-20 relative">Быстрый старт</span></a>
+        <span className="block z-20 relative">Связаться</span></span>
         <div className="flex md:gap-1 mt-8">
                 <a href="tel:89174351919" target="_blank"><img src="/img/icon/phone.svg" alt="" /></a>
                 <a href="https://t.me/nineteen_bees" target="_blank"><img src="/img/icon/tg.svg" alt="" /></a>
