@@ -48,15 +48,15 @@ export default function CookieConsent() {
       const params = searchParams.toString();
       const url = base + pathName + (params && "?" + params);
       // console.log(url);
-   if(consent){
+   
       ym(108091925, "hit", url);
-   }
+   
  
     }, [pathName, searchParams]);
 
   return (
     <>
-      {consent && (
+   
         <Script id="ga-script" strategy="afterInteractive">
           {`
            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -74,19 +74,23 @@ export default function CookieConsent() {
         });    
           `}
         </Script>
-      )}
+    
       {!isOpen && (
-        <div className={`cookie-banner fixed bottom-0 right-0 w-full md:w-1/2 lg:w-1/3 h-auto p-6 sm:p-8 z-100 backdrop-blur-2xl bg-white-op-70 rounded-lg`}>
-          <p className='text-xs'>Мы используем обязательные технические cookie для корректной работы сайта, а также иные категории cookie, включая функциональные, аналитические и маркетинговые, для улучшения работы сайта и анализа взаимодействия посетителей. Вы можете принять все cookie или отклонить. Обработка персональных данных осуществляется в соответствии с <a href="/docs/privacy-policy" target='_blank' className='text-fuchsia-700 hover:text-fuchsia-500'>Политикой обработки персональных данных.</a> </p>
-          <div className="flex gap-2 mt-4 ">
-          <button className='cursor-pointer rounded-lg bg-darck flex items-center justify-center text-sm tracking-tight text-white px-3 py-2 whitespace-nowrap uppercase
+        <div className={`cookie-banner fixed bottom-0 right-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 h-auto p-6 pb-9 z-100 backdrop-blur-2xl bg-white-op-70 rounded-lg`}>
+          <p className='text-xs'>Мы используем технические cookie для работы сайта и веб-аналитику Яндекс Метрики для учёта посещений, рекламы, заявок и улучшения сайта.</p>
+          <p className='text-xs mt-2'>Обработка персональных данных осуществляется в соответствии с <a href="/docs/privacy-policy" target='_blank' className='text-fuchsia-700 hover:text-fuchsia-500'>Политикой обработки персональных данных.</a> </p>
+          {/* <p className="text-xs mt-1" >Вы можете принять все cookie или <button className='text-fuchsia-700 hover:text-fuchsia-500 cursor-pointer' onClick={noAcceptCookies}>отклонить</button>.</p> */}
+          <div className="flex flex-row-reverse md:flex-row justify-center md:justify-start gap-2 mt-3 ">
+             <button className='cursor-pointer rounded-lg bg-darck flex items-center justify-center text-sm tracking-tight text-white px-3 py-2 whitespace-nowrap uppercase 
           hover:bg-linear-to-r active:bg-linear-to-tr active:contrast-150
     hover:from-text-grad-2 hover:from-41.24% active:from-text-grad-2 active:from-41.24%
     hover:to-text-grad-3 hover:to-84.31% active:to-text-grad-3 active:to-84.31% transition-all duration-[.6s]' onClick={acceptCookies}>Принять</button>
-     <button className='cursor-pointer rounded-lg bg-darck flex items-center justify-center text-sm tracking-tight text-white px-3 py-2 whitespace-nowrap uppercase 
+              {/* <button className='cursor-pointer rounded-lg bg-darck flex items-center justify-center text-sm tracking-tight text-white px-3 py-2 whitespace-nowrap uppercase 
           hover:bg-linear-to-r active:bg-linear-to-tr active:contrast-150
     hover:from-text-grad-2 hover:from-41.24% active:from-text-grad-2 active:from-41.24%
-    hover:to-text-grad-3 hover:to-84.31% active:to-text-grad-3 active:to-84.31% transition-all duration-[.6s]' onClick={noAcceptCookies}>Отклонить</button>
+    hover:to-text-grad-3 hover:to-84.31% active:to-text-grad-3 active:to-84.31% transition-all duration-[.6s]' onClick={noAcceptCookies}>Отклонить</button> */}
+         
+   
     </div>
         </div>
       )}

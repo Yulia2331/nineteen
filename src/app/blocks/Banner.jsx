@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../components/Button";
+import ButtonPop from "../components/ButtonPop";
 import ExportedImage from "next-image-export-optimizer";
 export default function Banner() {
   return (
@@ -34,7 +34,7 @@ export default function Banner() {
     </div>
 </div>
     <div className="mt-12">
-        <Button link="https://t.me/nineteen_bees" text="Обсудить вашу задачу" class="w-full md:w-auto lg:w-1/2"></Button>
+        <ButtonPop text="Обсудить вашу задачу" class="w-full md:w-auto lg:w-1/2"></ButtonPop>
     </div>
     </div>
     );

@@ -3,6 +3,13 @@
 import Header from "../blocks/Header";
 import Footer from "../blocks/Footer";
 import Cases from "../blocks/Cases";
+export async function generateMetadata() {;
+  return {
+    title: `Спасибо!`,
+    description: `Спасибо!`,
+  };
+}
+
 export default function Thankyou() {
   return (
     <div className="min-h-screen justify-center w-full overflow-hidden relative">   

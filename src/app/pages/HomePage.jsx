@@ -42,6 +42,8 @@ export default function HomePage() {
               }
             }, []);
 
+              
+
   return (
     <div className="min-h-screen justify-center w-full overflow-hidden relative">
       <div className="h-full w-full relative">
@@ -103,7 +105,11 @@ export default function HomePage() {
   </div>
 </div>
         <Numbers></Numbers>
-        <WhenCome></WhenCome>
+        <WhenCome cardCome = {[
+          {text: 'Есть сайт и реклама, <br /> но заявок нет', img: '/img/whencome/1.png'}, 
+          {text: 'Подрядчиков много, <br /> результата не видно', img: '/img/whencome/2.png'}, 
+          {text: 'Нужен предсказуемый <br /> рост', img: '/img/whencome/3.png'}]}>
+        </WhenCome>
         
           <Growth></Growth>
           

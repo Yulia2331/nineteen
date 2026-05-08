@@ -1,6 +1,6 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react'
-import MarketingItem from "../components/MarketingItem";
+import MarketingItem from "../components/blockComponents/MarketingItem";
 import ButtonBlack from "../components/ButtonBlack";
 export default function Marketing() {
              const [isVisible, setIsVisible] = useState(false);

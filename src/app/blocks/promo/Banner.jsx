@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ButtonBlack from "../../components/ButtonBlack";
+import ButtonBlackPop from "../../components/ButtonBlackPop";
 import ExportedImage from "next-image-export-optimizer";
 // import testPictureStatic from "/img/promo/big-logo.png";
 export default function Banner() {
@@ -29,10 +29,7 @@ export default function Banner() {
                 <span className="font-bold block">Фиксированный тариф:</span>
                 <span>от упаковки идеи и креативов <br /> до запуска рекламы</span>
             </div>
-        <div className=" flex flex-col items-center justify-center relative z-30">
-                <ButtonBlack link="https://t.me/nineteen_bees" text="Запустить рекламу под ключ" class="w-full md:w-auto lg:w-1/2 mb-3"></ButtonBlack>
-                <span className="text-sm md:text-[16px]">ответим в течение 60 минут</span>
-            </div>
+   
         </div>
     </div>
         <div className="absolute h-full w-10/12 right-0 -bottom-20 xs:bottom-0 flex flex-col items-center pointer-events-none">               
@@ -40,6 +37,12 @@ export default function Banner() {
               {/* <img className="w-[168px] xs:w-[200px] sm:w-[260px] lg:w-[290px] xl:w-[310px] translate-x-5 xs:translate-x-0 translate-y-38 xs:translate-y-44 sm:translate-y-48 md:translate-y-30 xl:translate-y-28 md:-translate-x-20 lg:-translate-x-20 z-10 animate-bounce-sm" src="/img/promo/big-logo.png" alt="" /> */}
                 {/* <img className="w-full scale-210 sm:scale-160 md:scale-140 xl:scale-94 md:max-h-[540px] lg:max-h-[580px] translate-x-10 xs:translate-x-10 md:translate-x-12 translate-y-42 xs:translate-y-46 md:translate-y-24 xl:-translate-y-10 z-20 animate-bounce-hand" src="/img/promo/hand.png" alt="" /> */}
                  <ExportedImage className="w-full scale-210 sm:scale-160 md:scale-140 xl:scale-94 md:max-h-[540px] lg:max-h-[580px] translate-x-10 xs:translate-x-10 md:translate-x-12 translate-y-42 xs:translate-y-46 md:translate-y-24 xl:-translate-y-10 z-20 animate-bounce-hand" width={1298} height={642}  src="/img/promo/hand.png" alt="Static Image" />
+            </div>
+            <div className="container">
+                     <div className=" flex flex-col items-center justify-center relative z-130">
+                <ButtonBlackPop text="Запустить рекламу под ключ" class="w-full md:w-auto lg:w-1/2 mb-3"></ButtonBlackPop>
+                <span className="text-sm md:text-[16px]">ответим в течение 60 минут</span>
+            </div>
             </div>
     </div>
     );

@@ -1,7 +1,7 @@
 'use client';
 import React, { useCallback, useEffect, useState, useRef } from 'react'
 import ExportedImage from "next-image-export-optimizer";
-import ButtonBlack from "../components/ButtonBlack";
+import ButtonBlackPop from "../components/ButtonBlackPop";
 
 export default function Footer() {
      const [isVisible, setIsVisible] = useState(false);
@@ -101,17 +101,18 @@ export default function Footer() {
             </ul> 
         </div>
     </div>
-    <div className="flex flex-wrap gap-4 md:gap-16 mt-10 md:mt-16">
+    <div className="flex flex-wrap gap-4 gap-y-4 md:gap-y-4 md:gap-16 mt-10 md:mt-16">
         <span className="text-white-op-30 text-sm sm:text-[16px]">2026, 19BEES.</span>
         <span className="text-white-op-30 text-sm sm:text-[16px]">Системный маркетинг под цели бизнеса</span>
         <span className="text-white-op-30 text-sm sm:text-[16px]">Сделано командой 19BEES</span>
+        <span className="text-white-op-30 text-sm sm:text-[16px]">ИП Теплякова Алла Сергеевна</span>
     </div>
 </div>
 
 </footer>
-        <div className="fixed bottom-3 w-full flex justify-end pr-1 md:pr-2  z-30">
+        <div className="fixed bottom-3 w-full flex justify-end pr-1 md:pr-2  z-130">
           <div className={`  transition-all duration-[.8s] ${op}`}>
-                  <ButtonBlack link="https://t.me/nineteen_bees" text="Начать проект" class="w-52 sm:w-72"/>
+                  <ButtonBlackPop  text="Начать проект" class="w-52 sm:w-72"/>
           </div>
         </div>
 <button onClick={scrollToTop} className={` z-30 fixed bottom-16 sm:bottom-20 right-1 md:right-5 h-12 w-12 flex items-center justify-center rounded-full bg-linear-to-bl from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% cursor-pointer hover:bg-linear-to-tl transition-all duration-[.8s] ${op}`}>

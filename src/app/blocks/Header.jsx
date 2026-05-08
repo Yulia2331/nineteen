@@ -4,7 +4,6 @@ import ExportedImage from "next-image-export-optimizer";
 import ContactForm from "../components/ContactForm";
 // import { Link, Element } from 'react-scroll'
 import Link from 'next/link'
-import  CookieConsent,  {  Cookies }  from  "react-cookie-consent" ;
 
 export default function Header() {
      const [isOpen, setOpen] = useState();
@@ -25,7 +24,7 @@ export default function Header() {
         <ul className="hidden lg:flex font-bold text-[12px] lg:text-sm xl:text-[16px] gap-4 xl:gap-7 uppercase">
             {/* <li className="cursor-pointer"><Link href="/#marketing" >Услуги</Link></li> */}
             <li className="cursor-pointer"><Link href="/cases">Кейсы</Link></li>
-            <li className="cursor-pointer"><Link href="/">О компании</Link></li>
+            <li className="cursor-pointer"><Link href="/about">О компании</Link></li>
             <li className="cursor-pointer"><Link href="/promo">Быстрый старт</Link></li>
         </ul>
         <div className="flex items-center gap-1 sm:gap-4">
@@ -58,7 +57,7 @@ export default function Header() {
     <ul className="flex flex-col font-bold text-[12px] lg:text-sm xl:text-[16px] gap-4 xl:gap-7 uppercase mb-5">
             {/* <li className="cursor-pointer"><Link href="/#marketing" >Услуги</Link></li> */}
             <li className="cursor-pointer"><Link href="/cases">Кейсы</Link></li>
-            <li className="cursor-pointer"><Link href="/">О компании</Link></li>
+            <li className="cursor-pointer"><Link href="/about">О компании</Link></li>
             <li className="cursor-pointer"><Link href="/promo">Быстрый старт</Link></li>
     </ul>
     <span onClick={() => setOpenPop(true)} className="text-white text-[12px] sm:text-lg rounded-3xl py-2 px-2 sm:px-4 tracking-wide transition-all duration-1000 bg-text-grad-3 text-center max-w-60
@@ -84,7 +83,6 @@ export default function Header() {
           </div>
        </div>
                     )}
-                    {/* <CookieConsent location = "right" buttonText = "Принять!" extraCookieOptions = { {  domain : ".yandex.ru"  } }> Этот веб - сайт использует файлы cookie для улучшения пользовательского опыта. </CookieConsent> */}
 </div>
     );
 }

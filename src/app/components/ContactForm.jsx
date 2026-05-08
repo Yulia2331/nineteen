@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function ContactForm() {
+   const [isCheckedSlet, setIsCheckedSlet] = useState(false);
   const router = useRouter();
-  const [formData, setFormData] = useState({ name: '', agree: true});
+  const [formData, setFormData] = useState({ name: '', agree: true, newsletter: false});
   const [status, setStatus] = useState('');
   const [error, setError] = useState("");
   const [pherror, setPhError] = useState(false);
@@ -18,9 +19,14 @@ export default function ContactForm() {
   };
 
    const [isChecked, setIsChecked] = useState(false);
+  
 
   const handleChangeCheck = (event) => {
     setIsChecked(!isChecked);
+  };
+    const handleChangeCheckSlet = (event) => {
+    setIsCheckedSlet(!isCheckedSlet);
+    setFormData({...formData, newsletter: !isCheckedSlet})
   };
   // console.log(formData);
 // https://back.19bees.ru/wp-json/myplugin/v1/submit-form
@@ -90,6 +96,14 @@ else{
             after:absolute after:left-1 after:top-1 after:h-2 after:w-2 after:bg-fuchsia-500  after:rounded-xs 
             ${isChecked ? '' : 'after:hidden'}
   `}>Отправляя данную форму, Вы даете <a href="/docs/soglasie-polzovatelya-na-obrabotku-personalnyh-dannyh" target='_blank' className='text-fuchsia-700 hover:text-fuchsia-500'>Согласие Пользователя на обработку персональных данных</a> и <a href="/docs/privacy-policy" target='_blank' className='text-fuchsia-700 hover:text-fuchsia-500'>соглашаетесь с Политикой обработки персональных данных</a></label>
+            </div>
+          <div className="max-w-80 mt-3 checkbox">
+            <input id="newsletter" name="newsletter" value="value" checked={isCheckedSlet} onChange={handleChangeCheckSlet} className='hidden' type="checkbox" />
+            <label htmlFor="newsletter" className={`text-xs leading-3.5 block relative pl-6 cursor-pointer
+            before:absolute before:left-0 before:h-4 before:w-4 before:border before:border-fuchsia-500 before:rounded-xs
+            after:absolute after:left-1 after:top-1 after:h-2 after:w-2 after:bg-fuchsia-500  after:rounded-xs 
+            ${isCheckedSlet ? '' : 'after:hidden'}
+  `}><a href="/docs/soglasie-na-poluchenie-rassylki-reklamno-informaczionnyh-materialov" target='_blank' className='text-fuchsia-700 hover:text-fuchsia-500'>Согласие на получение рассылки рекламно-информационных материалов</a></label>
             </div>
           <button type="submit" className="cursor-pointer rounded-[60px] bg-darck flex items-center justify-center gap-2 text-sm sm:text-xl md:text-2xl tracking-[-0.5] text-white p-4 whitespace-nowrap w-full mt-6">Отправить</button>
           <p className='text-center mt-3 bg-clip-text text-transparent bg-linear-to-l from-text-grad-1 from-5.56% via-text-grad-2 via-41.24% to-text-grad-3 to-84.31% text-lg max-w-80 leading-5'>{status}</p>

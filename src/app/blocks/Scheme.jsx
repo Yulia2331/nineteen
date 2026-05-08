@@ -123,7 +123,6 @@ const [vis3, setVis3] = useState(false);
                 </div>
            </div>
               <Parallax speed={-16}>
-                  {/* <img src="/img/bee.png" alt="" className={`absolute -top-80 scale-60 -right-30 xs:-right-40 md:left-0 md:right-0 lg:scale-100 lg:left-24 pointer-events-none z-20`} /> */}
                   <ExportedImage className="absolute -top-80 scale-60 xs:scale-80 -right-20 md:left-6 md:right-0 lg:scale-100 lg:left-24 pointer-events-none z-20" width={288} height={288}  src="/img/bee.png" alt="Static Image"/>
          </Parallax> 
         </div>

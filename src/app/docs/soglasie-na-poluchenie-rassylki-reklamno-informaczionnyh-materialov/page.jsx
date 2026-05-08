@@ -1,0 +1,19 @@
+import DocsPage  from "../../pages/DocsPage";
+
+export async function generateMetadata() {;
+  const res = await fetch("https://back.19bees.ru//wp-json/yoast/v1/get_head?url=https://back.19bees.ru/soglasie-na-poluchenie-rassylki-reklamno-informaczionnyh-materialov/");
+   let meta = await res.json();
+   meta = meta.json;
+
+  return {
+    title: `${meta.title}`,
+    description: `${meta.description}`,
+  };
+}
+
+export default  function Page() {
+ 
+  return (
+    <DocsPage slug="soglasie-na-poluchenie-rassylki-reklamno-informaczionnyh-materialov"></DocsPage>
+  )
+}

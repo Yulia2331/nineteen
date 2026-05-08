@@ -1,7 +1,7 @@
 'use client'
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 import axios from "axios";
-import CaseItem from "../components/CaseItem";
+import CaseItem from "../components/blockComponents/CaseItem";
 import Button from "../components/Button";
 export default function Cases() {
 

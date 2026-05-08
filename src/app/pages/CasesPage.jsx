@@ -33,9 +33,9 @@ const fetchPosts = () => {
     fetchPosts()
   }, 
 [])
-const [page, setPage] = useState(6)
+const [page, setPage] = useState(12)
  const more = () => {
-    setPage(page + 6);
+    setPage(page + 12);
     fetchPosts();
   };
   useEffect(() => {
@@ -95,7 +95,7 @@ export default  function PageCases() {
              <img src="/img/case-text.png" alt="" className="min-w-72 mb-2"/>
 
             <img src="/img/logo.svg" alt="" className="w-24"/>
-              <span className="text-[87px] font-bold uppercase">Кейсы</span>
+              <span className="text-[87px] font-bold uppercase"><h1>Кейсы</h1></span>
             <img src="/img/logo.svg" alt="" className="w-24"/>
 
             <img src="/img/case-text.png" alt="" className="min-w-72 mb-2"/>
